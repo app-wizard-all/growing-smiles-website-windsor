@@ -37,31 +37,40 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Logo Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 py-16 lg:py-24 overflow-hidden">
-        {/* Large Logo at Top */}
-        <div className="text-center mb-12">
+      {/* Enhanced Logo Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 lg:py-32 overflow-hidden min-h-[80vh] flex items-center">
+        {/* Large Logo Background */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Growing Smiles Children's Dentistry Logo" 
-            className="h-32 lg:h-40 w-auto mx-auto mb-8"
+            alt="Logo Background" 
+            className="w-full h-full object-contain opacity-[0.03] scale-110"
           />
         </div>
 
-        {/* Logo Watermark Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5">
+        {/* Secondary Logo Layer for Depth */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Logo Backdrop" 
-            className="w-96 h-96 object-contain transform scale-150"
+            alt="Logo Layer" 
+            className="w-96 h-96 lg:w-[500px] lg:h-[500px] object-contain opacity-[0.08]"
           />
         </div>
         
-        {/* Decorative Pattern */}
+        {/* Decorative Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22%23f0f9ff%22%20fill-opacity%3D%220.4%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%223%22%20r%3D%222%22/%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center max-w-4xl mx-auto">
+            {/* Prominent Logo Display */}
+            <div className="mb-12">
+              <img 
+                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+                alt="Growing Smiles Children's Dentistry Logo" 
+                className="h-24 lg:h-32 w-auto mx-auto mb-8 drop-shadow-lg"
+              />
+            </div>
+
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Gentle Pediatric Dental Care in{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
