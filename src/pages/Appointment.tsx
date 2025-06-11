@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { Calendar, Clock, MapPin, Phone } from "lucide-react";
+import { Calendar, Clock, MapPin, Phone, CheckCircle, Shield, Users } from "lucide-react";
 
 const Appointment = () => {
   return (
