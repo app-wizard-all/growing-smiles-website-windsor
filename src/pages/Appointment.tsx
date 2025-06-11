@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Calendar, Clock, Phone, CheckCircle, Shield, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, Phone } from "lucide-react";
 
 const Appointment = () => {
   return (
@@ -9,21 +9,27 @@ const Appointment = () => {
       <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link to="/" className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4">
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
                 alt="Growing Smiles Children's Dentistry Logo" 
                 className="h-16 w-auto"
               />
-            </Link>
+            </div>
             <nav className="hidden md:flex space-x-8 items-center">
               <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Home
               </Link>
+              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+                Services
+              </Link>
               <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Contact
               </Link>
-              <Link to="/appointment" className="text-primary font-medium">
+              <Link 
+                to="/appointment" 
+                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
                 Book Appointment
               </Link>
             </nav>

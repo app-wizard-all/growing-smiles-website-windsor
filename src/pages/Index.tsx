@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock, Users, Shield, Heart, Star, Calendar, CheckCircle, Award, Baby } from "lucide-react";
+import { Phone, MapPin, Calendar } from "lucide-react";
 
 const Index = () => {
   return (
@@ -20,6 +20,9 @@ const Index = () => {
               <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Home
               </Link>
+              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+                Services
+              </Link>
               <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Contact
               </Link>
@@ -34,8 +37,17 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section with Logo Backdrop */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 lg:py-32 overflow-hidden">
+      {/* Logo Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 py-16 lg:py-24 overflow-hidden">
+        {/* Large Logo at Top */}
+        <div className="text-center mb-12">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Growing Smiles Children's Dentistry Logo" 
+            className="h-32 lg:h-40 w-auto mx-auto mb-8"
+          />
+        </div>
+
         {/* Logo Watermark Background */}
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
           <img 
@@ -49,53 +61,30 @@ const Index = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22%23f0f9ff%22%20fill-opacity%3D%220.4%22%3E%3Ccircle%20cx%3D%223%22%20cy%3D%223%22%20r%3D%222%22/%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-                Gentle Pediatric Dental Care in{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Windsor
-                </span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed">
-                Healthy smiles start early. We care for your children's dental needs with a friendly, 
-                comfortable, and caring environment that makes every visit a positive experience.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
-                <Link 
-                  to="/appointment"
-                  className="group bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                >
-                  <span className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5" />
-                    Book Appointment
-                  </span>
-                </Link>
-                <Link 
-                  to="/contact"
-                  className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-            
-            {/* Right Content - Hero Image */}
-            <div className="relative">
-              <div className="bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <img 
-                  src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=600&h=400&fit=crop&crop=face"
-                  alt="Happy child smiling"
-                  className="w-full h-80 object-cover rounded-2xl"
-                />
-                <div className="absolute -bottom-4 -left-4 bg-primary text-white p-4 rounded-2xl shadow-lg">
-                  <div className="flex items-center gap-2">
-                    <Heart className="w-6 h-6" />
-                    <span className="font-semibold">Kid-Friendly Care</span>
-                  </div>
-                </div>
-              </div>
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Gentle Pediatric Dental Care in{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Windsor
+              </span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-600 mb-12 leading-relaxed">
+              Healthy smiles start early. We care for your children's dental needs with a friendly, 
+              comfortable, and caring environment that makes every visit a positive experience.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link 
+                to="/contact"
+                className="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg"
+              >
+                Contact Us
+              </Link>
+              <Link 
+                to="/services"
+                className="border-2 border-secondary text-secondary px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary hover:text-white transition-all duration-300 hover:shadow-lg"
+              >
+                Our Services
+              </Link>
             </div>
           </div>
         </div>
@@ -105,129 +94,35 @@ const Index = () => {
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl"></div>
       </section>
 
-      {/* Trust Indicators */}
+      {/* Appointment Form Section */}
       <section className="py-20 bg-white relative">
-        {/* Subtle Logo Brand Mark */}
-        <div className="absolute top-8 right-8 opacity-5">
-          <img 
-            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Brand Mark" 
-            className="w-24 h-24 object-contain"
-          />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Growing Smiles?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Professional pediatric dental care that both parents trust and children love</p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Schedule Your Appointment</h2>
+            <p className="text-xl text-gray-600">Book your child's dental visit today and start their journey to a healthy smile</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Star className="w-10 h-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Gentle Care</h3>
-              <p className="text-gray-600 leading-relaxed">Compassionate approach designed specifically for children's comfort and wellbeing</p>
+          <div className="bg-gradient-to-br from-blue-50/50 to-teal-50/50 rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf6DwR2k7aP8Ql3h5vM9nXcYzW4tR1bE2gH6jI8kL0pN3qO5/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                className="rounded-xl"
+                title="Appointment Booking Form"
+              >
+                Loading appointment form...
+              </iframe>
+              <p className="text-sm text-gray-500 mt-4 text-center">
+                Having trouble with the form? You can also call us at{" "}
+                <a href="tel:519-800-4500" className="text-primary font-semibold hover:underline">
+                  519-800-4500
+                </a>
+              </p>
             </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Award className="w-10 h-10 text-secondary" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Expert Team</h3>
-              <p className="text-gray-600 leading-relaxed">Experienced pediatric dental specialists dedicated to your child's oral health</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Baby className="w-10 h-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Kid-Friendly</h3>
-              <p className="text-gray-600 leading-relaxed">Fun, welcoming environment that makes dental visits something to look forward to</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
-        {/* Background Logo */}
-        <div className="absolute bottom-0 right-0 opacity-5 transform translate-x-1/4 translate-y-1/4">
-          <img 
-            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Background Logo" 
-            className="w-80 h-80 object-contain"
-          />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Our Pediatric Dental Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive dental care designed specifically for children and teens, 
-              delivered with gentle expertise and a caring touch.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Preventive Dental Care",
-                description: "Regular checkups and cleanings to keep your child's teeth healthy and strong for life.",
-                image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop"
-              },
-              {
-                icon: Users,
-                title: "Dental Exams & Cleanings",
-                description: "Thorough examinations and professional cleanings in our kid-friendly environment.",
-                image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=200&fit=crop"
-              },
-              {
-                icon: Heart,
-                title: "Fluoride Treatments",
-                description: "Safe and effective fluoride applications to strengthen tooth enamel and prevent decay.",
-                image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=300&h=200&fit=crop"
-              },
-              {
-                icon: Shield,
-                title: "Dental Sealants",
-                description: "Protective coatings to prevent cavities in hard-to-reach areas of back teeth.",
-                image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop"
-              },
-              {
-                icon: Users,
-                title: "Early Orthodontic Evaluation",
-                description: "Assessment and guidance for proper teeth alignment and healthy jaw development.",
-                image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=200&fit=crop"
-              },
-              {
-                icon: Star,
-                title: "Emergency Care",
-                description: "Prompt, gentle care for dental emergencies when your child needs us most.",
-                image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=300&h=200&fit=crop"
-              }
-            ].map((service, index) => (
-              <div key={index} className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -247,10 +142,10 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-              Ready to Schedule Your Child's Visit?
+              Questions? We're Here to Help!
             </h2>
             <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Join our family of happy patients and give your child the gift of a healthy, beautiful smile.
+              Contact us for any questions about your child's dental care or to speak with our friendly team.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
@@ -275,10 +170,10 @@ const Index = () => {
             </div>
             
             <Link 
-              to="/appointment"
+              to="/contact"
               className="inline-block bg-white text-primary px-12 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105"
             >
-              Request Appointment
+              Contact Us
             </Link>
           </div>
         </div>
