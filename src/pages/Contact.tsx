@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+      <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <Link to="/" className="flex items-center space-x-4">
@@ -17,7 +17,7 @@ const Contact = () => {
               />
             </Link>
             <nav className="hidden md:flex space-x-8 items-center">
-              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors">
+              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Home
               </Link>
               <Link to="/contact" className="text-primary font-medium">
@@ -25,7 +25,7 @@ const Contact = () => {
               </Link>
               <Link 
                 to="/appointment" 
-                className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 Book Appointment
               </Link>
@@ -35,14 +35,23 @@ const Contact = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 lg:py-32 relative overflow-hidden">
+        {/* Logo Watermark Background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-5">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Backdrop" 
+            className="w-96 h-96 object-contain transform scale-150"
+          />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Contact Us
+              Get in Touch
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We're here to help! Get in touch with Growing Smiles Children's Dentistry 
+              We're here to help! Contact Growing Smiles Children's Dentistry 
               for all your pediatric dental needs.
             </p>
           </div>
@@ -50,23 +59,32 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20">
+      <section className="py-20 relative">
+        {/* Subtle Logo Brand Mark */}
+        <div className="absolute top-8 right-8 opacity-5">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Brand Mark" 
+            className="w-32 h-32 object-contain"
+          />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+              <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Office Information</h2>
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-8 h-8 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2 text-lg">Address</h3>
-                      <div className="text-gray-600 leading-relaxed">
-                        <p className="font-medium">Growing Smiles Children's Dentistry</p>
+                      <div className="text-gray-600 leading-relaxed space-y-1">
+                        <p className="font-medium text-lg">Growing Smiles Children's Dentistry</p>
                         <p>1400 Front Rd</p>
                         <p>Windsor, ON N9J 2B3</p>
                         <p>Canada</p>
@@ -75,7 +93,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
                       <Phone className="w-8 h-8 text-secondary" />
                     </div>
                     <div>
@@ -90,7 +108,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
                       <Clock className="w-8 h-8 text-primary" />
                     </div>
                     <div>
@@ -114,7 +132,16 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white shadow-xl">
+              <div className="bg-gradient-to-br from-primary to-secondary p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
+                {/* Background Logo */}
+                <div className="absolute top-4 right-4 opacity-20">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+                    alt="Background Logo" 
+                    className="w-16 h-16 object-contain brightness-0 invert"
+                  />
+                </div>
+                
                 <h3 className="text-2xl font-bold mb-4">Ready to Schedule?</h3>
                 <p className="mb-6 text-white/90 leading-relaxed">
                   Book your child's appointment today for gentle, professional pediatric dental care 
@@ -122,7 +149,7 @@ const Contact = () => {
                 </p>
                 <Link 
                   to="/appointment"
-                  className="inline-flex items-center gap-3 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Calendar className="w-5 h-5" />
                   Request Appointment
@@ -131,7 +158,7 @@ const Contact = () => {
             </div>
 
             {/* Map Section */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
               <div className="p-8 border-b border-gray-100">
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Find Us</h2>
                 <p className="text-gray-600">Located in the heart of Windsor, Ontario</p>
@@ -156,23 +183,32 @@ const Contact = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-900 text-white py-16 relative overflow-hidden">
+        {/* Subtle Logo in Footer */}
+        <div className="absolute top-4 right-4 opacity-10">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Footer Logo" 
+            className="w-16 h-16 object-contain brightness-0 invert"
+          />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="flex items-center justify-center space-x-4 mb-8">
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
                 alt="Growing Smiles Children's Dentistry Logo" 
-                className="h-12 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-0 invert"
               />
             </div>
-            <div className="space-y-2 mb-6">
-              <p className="text-xl font-semibold">Growing Smiles Children's Dentistry</p>
-              <p className="text-gray-400">1400 Front Rd, Windsor ON N9J 2B3</p>
-              <p className="text-gray-400">Phone: 519-800-4500</p>
+            <div className="space-y-3 mb-8">
+              <h3 className="text-2xl font-semibold">Growing Smiles Children's Dentistry</h3>
+              <p className="text-gray-300 text-lg">1400 Front Rd, Windsor ON N9J 2B3</p>
+              <p className="text-gray-300 text-lg">Phone: 519-800-4500</p>
             </div>
-            <div className="border-t border-gray-800 pt-6">
-              <p className="text-gray-500 text-sm">
+            <div className="border-t border-gray-700 pt-8">
+              <p className="text-gray-400">
                 © {new Date().getFullYear()} Growing Smiles Children's Dentistry. All rights reserved.
               </p>
             </div>
