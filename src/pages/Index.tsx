@@ -24,7 +24,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section with Parallax */}
-      <section className="relative hero-gradient min-h-screen flex items-center">
+      <section className="relative hero-gradient min-h-screen flex flex-col items-center justify-center">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30" />
@@ -44,97 +44,82 @@ const Index = () => {
             />
           ))}
         </div>
-
-        {/* Main Content Container */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo and Text Section */}
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
-            {/* Logo */}
-            <div className="w-full lg:w-1/2 animate-fade-in">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                <div className="relative bg-white rounded-lg p-4">
-                  <img 
-                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                    alt="Growing Smiles Children's Dentistry" 
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Text Content */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 animate-fade-in-up">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                <div className="relative">
-                  <h1 className="text-5xl lg:text-7xl font-bold">
-                    <span className="gradient-text animate-fade-in inline-block">
-                      Creating Happy
-                    </span>
-                    <span className="block mt-2 text-[hsl(var(--primary))] animate-fade-in-delayed">
-                      Little Smiles
-                    </span>
-                  </h1>
-                  <div className="mt-4 flex items-center justify-center lg:justify-start gap-2">
-                    <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-                    <p className="text-xl text-gray-600 leading-relaxed">
-                      Where gentle care meets playful spirits
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Animated CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
-                <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
-                  <Link to="/appointment" className="primary-button animate-pulse-subtle">
-                    <Calendar className="w-6 h-6" />
-                    <span>Start Your Journey</span>
-                  </Link>
-                </div>
-                <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
-                  <Link to="/services" className="secondary-button">
-                    <Smile className="w-6 h-6" />
-                    <span>Our Services</span>
-                  </Link>
-                </div>
-              </div>
+        {/* Logo Row */}
+        <div className="relative w-full flex justify-center items-center py-8 animate-fade-in">
+          <div className="relative w-full max-w-4xl px-8">
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-3xl blur opacity-40" />
+            <div className="relative bg-white/80 rounded-3xl p-6 shadow-xl flex justify-center items-center">
+              <img 
+                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                alt="Growing Smiles Children's Dentistry" 
+                className="w-full h-auto object-contain max-h-40"
+              />
             </div>
           </div>
-
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            {[
-              { icon: Smile, text: "Kid-Friendly", color: "text-blue-500", description: "Fun and welcoming environment" },
-              { icon: Heart, text: "Gentle Care", color: "text-purple-500", description: "Expert and caring approach" },
-              { icon: Star, text: "Fun Experience", color: "text-pink-500", description: "Making dental visits enjoyable" }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6
-                         shadow-lg hover:shadow-xl
-                         transform hover:-translate-y-1 hover:scale-102
-                         active:scale-98
-                         transition-all duration-300
-                         animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-                <div className="relative">
-                  <div className={`w-12 h-12 mb-4 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center`}>
-                    <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {item.text}
-                  </h3>
-                  <p className="text-gray-600">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+        </div>
+        {/* Text Row */}
+        <div className="relative w-full flex flex-col items-center py-4 animate-fade-in-up">
+          <h1 className="text-4xl lg:text-6xl font-normal tracking-tight text-center">
+            <span className="gradient-text animate-fade-in inline-block">
+              Creating Happy
+            </span>
+            <span className="block mt-2 text-[hsl(var(--primary))] animate-fade-in-delayed">
+              Little Smiles
+            </span>
+          </h1>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Where gentle care meets playful spirits
+            </p>
           </div>
+          {/* Animated CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
+              <Link to="/appointment" className="primary-button animate-pulse-subtle">
+                <Calendar className="w-6 h-6" />
+                <span>Start Your Journey</span>
+              </Link>
+            </div>
+            <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
+              <Link to="/services" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                <Smile className="w-6 h-6 inline-block mr-2" />
+                <span>Our Services</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Trust Indicators */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          {[
+            { icon: Smile, text: "Kid-Friendly", color: "text-blue-500", description: "Fun and welcoming environment" },
+            { icon: Heart, text: "Gentle Care", color: "text-purple-500", description: "Expert and caring approach" },
+            { icon: Star, text: "Fun Experience", color: "text-pink-500", description: "Making dental visits enjoyable" }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6
+                       shadow-lg hover:shadow-xl
+                       transform hover:-translate-y-1 hover:scale-102
+                       active:scale-98
+                       transition-all duration-300
+                       animate-fade-in"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+              <div className="relative">
+                <div className={`w-12 h-12 mb-4 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center`}>
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {item.text}
+                </h3>
+                <p className="text-gray-600">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
