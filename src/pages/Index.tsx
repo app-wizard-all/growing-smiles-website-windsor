@@ -9,15 +9,16 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative hero-gradient">
-    {/* Logo Section - Full Width */}
+   {/* Logo Section - Full Width */}
 <div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white py-4">
-  {/* Logo Container */}
-  <div className="w-full">
-    <img 
-      src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-      alt="Growing Smiles Children's Dentistry" 
-      className="w-full h-[120px] object-cover object-center"
-    />
+  <div className="w-full flex justify-center">
+    <div className="w-full" style={{ maxHeight: '20vh' }}>  {/* Using viewport height for proportional sizing */}
+      <img 
+        src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+        alt="Growing Smiles Children's Dentistry" 
+        className="w-full h-full object-contain"
+      />
+    </div>
   </div>
 </div>
         {/* Content Section */}
