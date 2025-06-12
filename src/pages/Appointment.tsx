@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 
 const Appointment = () => {
   useEffect(() => {
