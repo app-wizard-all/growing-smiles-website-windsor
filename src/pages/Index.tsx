@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Calendar, Smile, Heart, Star, Phone, MapPin, Cloud } from "lucide-react";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavBar';
 
 const Index = () => {
   return (
