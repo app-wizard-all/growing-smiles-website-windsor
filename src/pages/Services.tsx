@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Users, Shield, Heart, Star, Calendar, CheckCircle, Award, Baby } from "lucide-react";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavBar';
 
 const Services = () => {
   return (
