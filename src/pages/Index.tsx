@@ -9,17 +9,15 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative hero-gradient">
-     {/* Logo Section - Full Width */}
+    {/* Logo Section - Full Width */}
 <div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white py-4">
-  {/* Logo Container - Controlled Width and Height */}
-  <div className="container mx-auto px-4">
-    <div className="relative w-full flex justify-center items-center">
-      <img 
-        src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-        alt="Growing Smiles Children's Dentistry" 
-        className="w-full max-w-4xl h-auto max-h-[150px] object-contain"
-      />
-    </div>
+  {/* Logo Container */}
+  <div className="w-full">
+    <img 
+      src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+      alt="Growing Smiles Children's Dentistry" 
+      className="w-full h-[120px] object-cover object-center"
+    />
   </div>
 </div>
         {/* Content Section */}
