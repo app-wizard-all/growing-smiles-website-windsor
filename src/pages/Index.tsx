@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Calendar } from "lucide-react";
 
@@ -114,13 +113,13 @@ const Index = () => {
           <div className="bg-gradient-to-br from-blue-50/50 to-teal-50/50 rounded-3xl p-8 shadow-lg border border-gray-100">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSf6DwR2k7aP8Ql3h5vM9nXcYzW4tR1bE2gH6jI8kL0pN3qO5/viewform?embedded=true"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true"
                 width="100%"
-                height="800"
+                height="520"
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                className="rounded-xl"
+                className="rounded-xl min-w-full"
                 title="Appointment Booking Form"
               >
                 Loading appointment form...
