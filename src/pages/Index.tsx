@@ -10,43 +10,43 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative hero-gradient">
         {/* Logo Section - Full Width */}
-        <div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white">
-          {/* Background Effects */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {/* Animated Clouds */}
-            <div className="absolute top-10 left-[10%] text-blue-100 animate-float">
-              <Cloud size={64} />
-            </div>
-            <div className="absolute top-20 right-[15%] text-purple-100 animate-float-slow">
-              <Cloud size={48} />
-            </div>
-            
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-r 
-                           from-blue-200/20 via-purple-200/20 to-pink-200/20 
-                           rounded-full blur-3xl"></div>
-          </div>
+<div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white">
+  {/* Background Effects */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Animated Clouds */}
+    <div className="absolute top-10 left-[10%] text-blue-100 animate-float">
+      <Cloud size={64} />
+    </div>
+    <div className="absolute top-20 right-[15%] text-purple-100 animate-float-slow">
+      <Cloud size={48} />
+    </div>
+    
+    {/* Background Gradients */}
+    <div className="absolute inset-0 bg-gradient-to-r 
+                   from-blue-200/20 via-purple-200/20 to-pink-200/20 
+                   rounded-full blur-3xl"></div>
+  </div>
 
-          {/* Logo Container */}
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="relative group">
-              <img 
-                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-                alt="Growing Smiles Children's Dentistry" 
-                className="w-full h-auto object-contain max-h-[250px] 
-                         filter drop-shadow-2xl 
-                         transition-transform duration-700
-                         select-none mix-blend-multiply"
-              />
-              
-              {/* Subtle Highlight Effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr 
-                            from-white/0 via-white/30 to-white/0 
-                            opacity-0 group-hover:opacity-100 
-                            transition-opacity duration-700"></div>
-            </div>
-          </div>
-        </div>
+  {/* Logo Container - Full Width */}
+  <div className="w-full px-4 sm:px-6 py-8">
+    <div className="relative group">
+      <img 
+        src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+        alt="Growing Smiles Children's Dentistry" 
+        className="w-full h-[200px] object-cover object-center
+                 filter drop-shadow-2xl 
+                 transition-transform duration-700
+                 select-none"
+      />
+      
+      {/* Subtle Highlight Effect */}
+      <div className="absolute inset-0 bg-gradient-to-tr 
+                    from-white/0 via-white/30 to-white/0 
+                    opacity-0 group-hover:opacity-100 
+                    transition-opacity duration-700"></div>
+    </div>
+  </div>
+</div>
 
         {/* Content Section */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
