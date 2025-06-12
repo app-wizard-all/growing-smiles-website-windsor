@@ -10,33 +10,14 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative hero-gradient">
      {/* Logo Section - Full Width */}
-<div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white">
-  {/* Background Effects */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Animated Clouds */}
-    <div className="absolute top-10 left-[10%] text-blue-100 animate-float">
-      <Cloud size={64} />
-    </div>
-    <div className="absolute top-20 right-[15%] text-purple-100 animate-float-slow">
-      <Cloud size={48} />
-    </div>
-    
-    {/* Background Gradients */}
-    <div className="absolute inset-0 bg-gradient-to-r 
-                   from-blue-200/20 via-purple-200/20 to-pink-200/20 
-                   rounded-full blur-3xl"></div>
-  </div>
-
-  {/* Logo Container - Full Width with Constrained Height */}
-  <div className="w-full px-4 sm:px-6 py-8">
-    <div className="relative max-h-[180px] overflow-hidden">
+<div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white py-4">
+  {/* Logo Container - Controlled Width and Height */}
+  <div className="container mx-auto px-4">
+    <div className="relative w-full flex justify-center items-center">
       <img 
         src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
         alt="Growing Smiles Children's Dentistry" 
-        className="w-full h-full object-contain
-                 filter drop-shadow-2xl 
-                 transition-transform duration-700
-                 select-none"
+        className="w-full max-w-4xl h-auto"
       />
     </div>
   </div>
