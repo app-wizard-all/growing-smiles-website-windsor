@@ -17,12 +17,11 @@ const Index = () => {
       <img 
         src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
         alt="Growing Smiles Children's Dentistry" 
-        className="w-full max-w-4xl h-auto"
+        className="w-full max-w-4xl h-auto max-h-[150px] object-contain"
       />
     </div>
   </div>
 </div>
-
         {/* Content Section */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Main Content */}
