@@ -14,7 +14,7 @@ const Index = () => {
   <div className="w-full flex justify-center">
     <div className="w-full" style={{ maxHeight: '15vh' }}>  {/* Reduced from 20vh to 15vh */}
       <img 
-        src="/938ec48e-ee62-43b3-9547-0f51ac679f34.png"  // Using the resized image
+        src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"  // Using the resized image
         alt="Growing Smiles Children's Dentistry" 
         className="w-full h-full object-contain max-w-5xl mx-auto"
       />
