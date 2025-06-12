@@ -37,19 +37,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -101,8 +94,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Add after your existing code in index.css */
 
 /* Custom Animations */
 @layer utilities {
@@ -169,20 +160,5 @@
            after:bg-[hsl(var(--primary))] after:origin-bottom-right 
            after:transition-transform after:duration-300 
            hover:after:scale-x-100 hover:after:origin-bottom-left;
-  }
-
-  .logo-container {
-    @apply relative group;
-  }
-
-  .logo-glow {
-    @apply absolute inset-0 bg-[hsl(var(--accent))/50] 
-           rounded-full blur-3xl opacity-50 
-           group-hover:opacity-70 transition-opacity duration-500;
-  }
-
-  .logo-image {
-    @apply relative z-10 w-full h-auto max-w-2xl mx-auto 
-           transform group-hover:scale-105 transition-transform duration-500;
   }
 }
