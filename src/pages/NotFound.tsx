@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from '../components/Navbar';
 
 const NotFound = () => {
   const location = useLocation();
