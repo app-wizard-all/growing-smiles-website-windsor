@@ -52,7 +52,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                 alt="Growing Smiles Children's Dentistry" 
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full max-h-40 object-contain p-2"
               />
             </div>
           </div>
