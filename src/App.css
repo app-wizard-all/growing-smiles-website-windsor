@@ -5,15 +5,52 @@
   text-align: center;
 }
 
+/* Main large logo for hero section */
+.logo-main {
+  height: 40em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: all 300ms;
+}
+
+.logo-main:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* Waterdrop version for header and smaller instances */
+.logo-waterdrop {
+  height: 3em;
+  width: auto;
+  padding: 0.5em;
+  will-change: filter;
+  transition: all 300ms;
+}
+
+.logo-waterdrop:hover {
+  filter: drop-shadow(0 0 1em #646cffaa);
+}
+
+/* Watermark version for backgrounds */
+.logo-watermark {
+  opacity: 0.05;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 300ms;
+}
+
+/* Legacy logo class - keeping for backward compatibility */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -33,26 +70,19 @@
   }
 }
 
-/* Main large logo for hero section */
-.logo-main {
-  height: 40em !important; /* Much bigger than the original 6em */
-  width: auto;
-  padding: 1.5em;
+/* Additional responsive adjustments for the main logo */
+@media (max-width: 768px) {
+  .logo-main {
+    height: 25em;
+    padding: 1em;
+  }
 }
 
-/* Waterdrop version for header */
-.logo-waterdrop {
-  height: 3em;
-  width: auto;
-  padding: 0.5em;
-}
-
-/* Watermark version for backgrounds */
-.logo-watermark {
-  opacity: 0.05;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+@media (max-width: 480px) {
+  .logo-main {
+    height: 20em;
+    padding: 0.75em;
+  }
 }
 
 .card {
