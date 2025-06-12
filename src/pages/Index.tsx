@@ -9,7 +9,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative hero-gradient">
-        {/* Logo Section - Full Width */}
+     {/* Logo Section - Full Width */}
 <div className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white">
   {/* Background Effects */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -27,23 +27,17 @@ const Index = () => {
                    rounded-full blur-3xl"></div>
   </div>
 
-  {/* Logo Container - Full Width */}
+  {/* Logo Container - Full Width with Constrained Height */}
   <div className="w-full px-4 sm:px-6 py-8">
-    <div className="relative group">
+    <div className="relative max-h-[180px] overflow-hidden">
       <img 
         src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
         alt="Growing Smiles Children's Dentistry" 
-        className="w-full h-[200px] object-cover object-center
+        className="w-full h-full object-contain
                  filter drop-shadow-2xl 
                  transition-transform duration-700
                  select-none"
       />
-      
-      {/* Subtle Highlight Effect */}
-      <div className="absolute inset-0 bg-gradient-to-tr 
-                    from-white/0 via-white/30 to-white/0 
-                    opacity-0 group-hover:opacity-100 
-                    transition-opacity duration-700"></div>
     </div>
   </div>
 </div>
