@@ -162,3 +162,15 @@
            hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }
+
+/* Add to your existing animations in index.css */
+@layer utilities {
+  @keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 4s ease-in-out infinite;
+  }
+}
