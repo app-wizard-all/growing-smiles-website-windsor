@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Mail, Calendar } from "lucide-react";
+import Navbar from '../components/Navbar';
 
 const Contact = () => {
   return (
