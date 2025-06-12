@@ -38,21 +38,30 @@ const Index = () => {
 
       {/* Enhanced Logo Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 lg:py-32 overflow-hidden min-h-[80vh] flex items-center">
-        {/* Large Logo Background */}
+        {/* Large Logo Background - Main Feature */}
         <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
             alt="Logo Background" 
-            className="w-full h-full object-contain opacity-[0.03] scale-110"
+            className="w-full max-w-4xl h-auto object-contain opacity-15 scale-125"
           />
         </div>
 
-        {/* Secondary Logo Layer for Depth */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {/* Secondary Logo Layer - Right Side */}
+        <div className="absolute top-20 right-10 lg:right-20">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Logo Layer" 
-            className="w-96 h-96 lg:w-[500px] lg:h-[500px] object-contain opacity-[0.08]"
+            alt="Logo Accent" 
+            className="w-32 h-32 lg:w-48 lg:h-48 object-contain opacity-20 rotate-12"
+          />
+        </div>
+
+        {/* Third Logo Layer - Left Side */}
+        <div className="absolute bottom-20 left-10 lg:left-20">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Accent" 
+            className="w-24 h-24 lg:w-36 lg:h-36 object-contain opacity-15 -rotate-12"
           />
         </div>
         
@@ -103,8 +112,25 @@ const Index = () => {
       </section>
 
       {/* Appointment Form Section */}
-      <section className="py-20 bg-white relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Logo Background for Form Section */}
+        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/4">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Background" 
+            className="w-96 h-96 lg:w-[500px] lg:h-[500px] object-contain opacity-[0.08]"
+          />
+        </div>
+        
+        <div className="absolute bottom-10 left-0 transform -translate-x-1/4">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Background" 
+            className="w-64 h-64 lg:w-80 lg:h-80 object-contain opacity-[0.06] rotate-180"
+          />
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Schedule Your Appointment</h2>
             <p className="text-xl text-gray-600">Book your child's dental visit today and start their journey to a healthy smile</p>
@@ -137,12 +163,29 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary via-primary to-secondary relative overflow-hidden">
-        {/* Logo Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+        {/* Large Logo Background */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Logo Backdrop" 
-            className="w-64 h-64 object-contain"
+            alt="Logo Background" 
+            className="w-full max-w-3xl h-auto object-contain opacity-20"
+          />
+        </div>
+        
+        {/* Additional Logo Elements */}
+        <div className="absolute top-10 right-10 opacity-15">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Accent" 
+            className="w-20 h-20 lg:w-32 lg:h-32 object-contain rotate-45"
+          />
+        </div>
+        
+        <div className="absolute bottom-10 left-10 opacity-15">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Logo Accent" 
+            className="w-16 h-16 lg:w-24 lg:h-24 object-contain -rotate-45"
           />
         </div>
         
@@ -193,12 +236,29 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16 relative overflow-hidden">
-        {/* Subtle Logo in Footer */}
+        {/* Large Logo Background in Footer */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Footer Logo Background" 
+            className="w-full max-w-2xl h-auto object-contain opacity-[0.08] brightness-0 invert"
+          />
+        </div>
+        
+        {/* Corner Logo Accents */}
         <div className="absolute top-4 right-4 opacity-10">
           <img 
             src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Footer Logo" 
+            alt="Footer Logo Accent" 
             className="w-16 h-16 object-contain brightness-0 invert"
+          />
+        </div>
+        
+        <div className="absolute bottom-4 left-4 opacity-10">
+          <img 
+            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
+            alt="Footer Logo Accent" 
+            className="w-12 h-12 object-contain brightness-0 invert rotate-180"
           />
         </div>
         
