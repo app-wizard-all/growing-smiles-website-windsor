@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Calendar, Smile, Heart, Star, Phone, MapPin, Cloud } from "lucide-react";
+import { Calendar, Smile, Heart, Star, Phone, MapPin, Cloud, Sparkles } from "lucide-react";
 import Navbar from '../components/NavBar';
 import { useEffect, useRef } from "react";
 
@@ -25,8 +25,10 @@ const Index = () => {
       
       {/* Hero Section with Parallax */}
       <section className="relative hero-gradient min-h-screen flex items-center">
-        {/* Floating Elements Background */}
+        {/* Animated Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
@@ -43,71 +45,95 @@ const Index = () => {
           ))}
         </div>
 
-        {/* Logo Section with Parallax */}
-        <div ref={parallaxRef} className="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white py-4">
-          <div className="w-full flex justify-center animate-fade-in">
-            <div className="w-full" style={{ maxHeight: '15vh' }}>
-              <img 
-                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                alt="Growing Smiles Children's Dentistry" 
-                className="w-full h-full object-contain max-w-5xl mx-auto"
-              />
+        {/* Main Content Container */}
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Logo and Text Section */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
+            {/* Logo */}
+            <div className="w-full lg:w-1/2 animate-fade-in">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                <div className="relative bg-white rounded-lg p-4">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                    alt="Growing Smiles Children's Dentistry" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 animate-fade-in-up">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                <div className="relative">
+                  <h1 className="text-5xl lg:text-7xl font-bold">
+                    <span className="gradient-text animate-fade-in inline-block">
+                      Creating Happy
+                    </span>
+                    <span className="block mt-2 text-[hsl(var(--primary))] animate-fade-in-delayed">
+                      Little Smiles
+                    </span>
+                  </h1>
+                  <div className="mt-4 flex items-center justify-center lg:justify-start gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
+                    <p className="text-xl text-gray-600 leading-relaxed">
+                      Where gentle care meets playful spirits
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Animated CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
+                <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
+                  <Link to="/appointment" className="primary-button animate-pulse-subtle">
+                    <Calendar className="w-6 h-6" />
+                    <span>Start Your Journey</span>
+                  </Link>
+                </div>
+                <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
+                  <Link to="/services" className="secondary-button">
+                    <Smile className="w-6 h-6" />
+                    <span>Our Services</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Main Content with Animations */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold">
-                <span className="gradient-text animate-fade-in">Creating Happy</span>
-                <span className="block mt-2 text-[hsl(var(--primary))] animate-fade-in-delayed">
-                  Little Smiles
-                </span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto animate-fade-in-delayed-2">
-                Where gentle care meets playful spirits. Making dental visits 
-                an adventure your child looks forward to!
-              </p>
-            </div>
-
-            {/* Animated CTAs */}
-            <div className="space-y-8 animate-fade-in-delayed-3">
-              <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
-                <Link to="/appointment" className="primary-button animate-pulse-subtle">
-                  <Calendar className="w-6 h-6" />
-                  <span>Start Your Journey</span>
-                </Link>
-              </div>
-
-              {/* Animated Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center gap-6">
-                {[
-                  { icon: Smile, text: "Kid-Friendly", color: "text-blue-500" },
-                  { icon: Heart, text: "Gentle Care", color: "text-purple-500" },
-                  { icon: Star, text: "Fun Experience", color: "text-pink-500" }
-                ].map((item, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-3 px-4 py-2 
-                             bg-white/50 backdrop-blur-sm rounded-full
-                             shadow-sm hover:shadow-md
-                             transform hover:-translate-y-1 hover:scale-105
-                             active:scale-95
-                             transition-all duration-300
-                             animate-fade-in"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                    <span className="text-sm font-medium text-gray-700">
-                      {item.text}
-                    </span>
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            {[
+              { icon: Smile, text: "Kid-Friendly", color: "text-blue-500", description: "Fun and welcoming environment" },
+              { icon: Heart, text: "Gentle Care", color: "text-purple-500", description: "Expert and caring approach" },
+              { icon: Star, text: "Fun Experience", color: "text-pink-500", description: "Making dental visits enjoyable" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6
+                         shadow-lg hover:shadow-xl
+                         transform hover:-translate-y-1 hover:scale-102
+                         active:scale-98
+                         transition-all duration-300
+                         animate-fade-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                <div className="relative">
+                  <div className={`w-12 h-12 mb-4 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center`}>
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
-                ))}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {item.text}
+                  </h3>
+                  <p className="text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -147,24 +173,31 @@ const Index = () => {
             ].map((item, index) => (
               <div 
                 key={index} 
-                className="card-hover group animate-fade-in-up"
+                className="group relative bg-white rounded-xl p-8
+                         shadow-lg hover:shadow-xl
+                         transform hover:-translate-y-2
+                         transition-all duration-300
+                         animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div 
-                  className={`w-16 h-16 mb-6 rounded-xl 
-                            bg-gradient-to-r ${item.gradient} 
-                            flex items-center justify-center
-                            group-hover:scale-110 group-hover:rotate-360
-                            transition-all duration-500`}
-                >
-                  <item.icon className="w-8 h-8 text-white" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                <div className="relative">
+                  <div 
+                    className={`w-16 h-16 mb-6 rounded-xl 
+                              bg-gradient-to-r ${item.gradient} 
+                              flex items-center justify-center
+                              group-hover:scale-110 group-hover:rotate-360
+                              transition-all duration-500`}
+                  >
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
               </div>
             ))}
           </div>
@@ -184,33 +217,39 @@ const Index = () => {
               </h2>
               <div className="space-y-6">
                 <div 
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl
+                  className="group relative bg-white rounded-xl p-6
                            shadow-lg hover:shadow-xl
                            transform hover:-translate-y-1 hover:scale-102
                            active:scale-98
                            transition-all duration-300"
                 >
-                  <Phone className="w-8 h-8 text-blue-500" />
-                  <div>
-                    <p className="text-sm text-gray-600">Call us at</p>
-                    <span className="text-xl font-semibold text-gray-900">
-                      519-800-4500
-                    </span>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                  <div className="relative flex items-center gap-4">
+                    <Phone className="w-8 h-8 text-blue-500" />
+                    <div>
+                      <p className="text-sm text-gray-600">Call us at</p>
+                      <span className="text-xl font-semibold text-gray-900">
+                        519-800-4500
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div 
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl
+                  className="group relative bg-white rounded-xl p-6
                            shadow-lg hover:shadow-xl
                            transform hover:-translate-y-1 hover:scale-102
                            active:scale-98
                            transition-all duration-300"
                 >
-                  <MapPin className="w-8 h-8 text-purple-500" />
-                  <div>
-                    <p className="text-sm text-gray-600">Visit us at</p>
-                    <span className="text-xl font-semibold text-gray-900">
-                      1400 Front Rd, Windsor ON
-                    </span>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+                  <div className="relative flex items-center gap-4">
+                    <MapPin className="w-8 h-8 text-purple-500" />
+                    <div>
+                      <p className="text-sm text-gray-600">Visit us at</p>
+                      <span className="text-xl font-semibold text-gray-900">
+                        1400 Front Rd, Windsor ON
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
