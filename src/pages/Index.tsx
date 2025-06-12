@@ -48,11 +48,11 @@ const Index = () => {
         <div className="relative w-full flex justify-center items-center py-8 animate-fade-in">
           <div className="relative w-full max-w-4xl px-8">
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-3xl blur opacity-40" />
-            <div className="relative bg-white/80 rounded-3xl p-6 shadow-xl flex justify-center items-center">
+            <div className="relative bg-white/80 rounded-3xl p-6 shadow-xl flex justify-center items-center h-48">
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                 alt="Growing Smiles Children's Dentistry" 
-                className="w-full h-auto object-contain max-h-40"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>
@@ -74,19 +74,15 @@ const Index = () => {
             </p>
           </div>
           {/* Animated CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
-              <Link to="/appointment" className="primary-button animate-pulse-subtle">
-                <Calendar className="w-6 h-6" />
-                <span>Start Your Journey</span>
-              </Link>
-            </div>
-            <div className="transform transition-all duration-300 hover:scale-105 active:scale-95">
-              <Link to="/services" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                <Smile className="w-6 h-6 inline-block mr-2" />
-                <span>Our Services</span>
-              </Link>
-            </div>
+          <div className="flex flex-row gap-6 justify-center mt-8 w-full max-w-md">
+            <Link to="/appointment" className="flex-1 flex items-center justify-center primary-button animate-pulse-subtle text-lg py-4">
+              <Calendar className="w-6 h-6 mr-2" />
+              <span>Start Your Journey</span>
+            </Link>
+            <Link to="/services" className="flex-1 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg py-4">
+              <Smile className="w-6 h-6 mr-2" />
+              <span>Our Services</span>
+            </Link>
           </div>
         </div>
         {/* Trust Indicators */}
