@@ -33,6 +33,28 @@
   }
 }
 
+/* Main large logo for hero section */
+.logo-main {
+  height: 40em !important; /* Much bigger than the original 6em */
+  width: auto;
+  padding: 1.5em;
+}
+
+/* Waterdrop version for header */
+.logo-waterdrop {
+  height: 3em;
+  width: auto;
+  padding: 0.5em;
+}
+
+/* Watermark version for backgrounds */
+.logo-watermark {
+  opacity: 0.05;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .card {
   padding: 2em;
 }
