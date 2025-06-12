@@ -65,12 +65,12 @@ const Index = () => {
             </div>
 
             {/* Logo Side */}
-            <div className="logo-container">
-              <div className="logo-glow"></div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-[hsl(var(--accent))/50] rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
                 alt="Growing Smiles Children's Dentistry" 
-                className="logo-image"
+                className="relative z-10 w-full h-auto max-w-2xl mx-auto transform group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
