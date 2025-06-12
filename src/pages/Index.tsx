@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Calendar, Smile, Heart, Star, Phone, MapPin, Cloud } from "lucide-react";
 
+<div className="min-h-screen bg-background overflow-hidden">
+  <Navbar />
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden">
