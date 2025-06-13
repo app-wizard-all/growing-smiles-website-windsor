@@ -61,26 +61,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Hero Text */}
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-teal-600 bg-clip-text text-transparent animate-gradient bg-300% animate-pulse">
-                  Creating Happy
-                </span>
-                <span className="block mt-4 text-secondary">
-                  Little Smiles
-                </span>
-              </h1>
-              
-              <div className="flex items-center justify-center gap-3 mt-6">
-                <Sparkles className="w-6 h-6 text-yellow-400 animate-twinkle" />
-                <p className="text-2xl text-gray-600 font-medium">
-                  Where gentle care meets playful spirits
-                </p>
-                <Sparkles className="w-6 h-6 text-yellow-400 animate-twinkle" style={{ animationDelay: '1s' }} />
-              </div>
-            </div>
-
             {/* Trust Indicators */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
               {[
@@ -117,33 +97,11 @@ const Index = () => {
       <section className="py-24 bg-gradient-to-b from-white to-teal-50 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-blue-500/5" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <Calendar className="w-8 h-8 text-primary" />
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-                Book Your Visit
-              </h2>
-            </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to give your child the gift of a healthy, beautiful smile? 
-              Schedule your appointment today and join our dental family!
-            </p>
-          </div>
-
           {/* Appointment Form Container */}
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-teal-400/20 to-blue-400/20 rounded-3xl blur-lg" />
               <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-teal-100">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
-                    Schedule Your Appointment
-                  </h3>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you within 24 hours
-                  </p>
-                </div>
-
                 {/* Google Form */}
                 <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-inner">
                   <iframe 

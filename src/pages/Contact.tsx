@@ -1,65 +1,12 @@
+
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock, Mail, Calendar } from "lucide-react";
+import { Phone, MapPin, Clock, Calendar } from "lucide-react";
 import Navbar from '../components/NavBar';
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-4">
-              <img 
-                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-                alt="Growing Smiles Children's Dentistry Logo" 
-                className="h-16 w-auto"
-              />
-            </div>
-            <nav className="hidden md:flex space-x-8 items-center">
-              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
-                Home
-              </Link>
-              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
-                Services
-              </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
-                Contact
-              </Link>
-              <Link 
-                to="/appointment" 
-                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Book Appointment
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 lg:py-32 relative overflow-hidden">
-        {/* Logo Watermark Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5">
-          <img 
-            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-            alt="Logo Backdrop" 
-            className="w-96 h-96 object-contain transform scale-150"
-          />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We're here to help! Contact Growing Smiles Children's Dentistry 
-              for all your pediatric dental needs.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Navbar />
 
       {/* Contact Content */}
       <section className="py-20 relative">
@@ -150,13 +97,15 @@ const Contact = () => {
                   Book your child's appointment today for gentle, professional pediatric dental care 
                   in a comfortable, kid-friendly environment.
                 </p>
-                <Link 
-                  to="/appointment"
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Calendar className="w-5 h-5" />
                   Request Appointment
-                </Link>
+                </a>
               </div>
             </div>
 

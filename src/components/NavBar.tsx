@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
+    { name: 'Meet our Dentist', href: '/dentist' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -47,6 +48,17 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Book Appointment Button */}
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              <Calendar className="w-5 h-5" />
+              Book Appointment
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,6 +94,16 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold mx-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Calendar className="w-5 h-5" />
+                Book Appointment
+              </a>
             </div>
           </div>
         )}

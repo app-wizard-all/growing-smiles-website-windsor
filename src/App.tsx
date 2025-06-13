@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
+import Dentist from "./pages/Dentist";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/dentist" element={<Dentist />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
