@@ -52,10 +52,10 @@ const Index = () => {
 
         {/* Logo and Trust Indicators Layout */}
         <div className="relative w-full max-w-7xl mx-auto px-4 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-7 gap-6 items-center">
             
-            {/* Left Trust Indicators */}
-            <div className="lg:col-span-2 space-y-4">
+            {/* Left Trust Indicators - Smaller */}
+            <div className="lg:col-span-2 space-y-3">
               {[
                 { 
                   icon: Smile, 
@@ -72,42 +72,42 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
-                           shadow-lg hover:shadow-xl
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-lg p-3
+                           shadow-md hover:shadow-lg
                            transform hover:-translate-y-1 hover:scale-105
                            transition-all duration-500
                            animate-fade-in border border-teal-100"
                   style={{ animationDelay: `${index * 0.3}s` }}
                 >
-                  <div className={`w-10 h-10 mb-3 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-5 h-5 text-white" />
+                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                  <h3 className="text-sm font-bold text-gray-900 mb-1">
                     {item.text}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Center Logo - Made Bigger */}
-            <div className="lg:col-span-1 flex justify-center">
+            {/* Center Logo - Much Bigger */}
+            <div className="lg:col-span-3 flex justify-center">
               <div className="relative">
-                <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
+                <div className="absolute -inset-12 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
+                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-purple-100">
                   <img 
                     src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                     alt="Growing Smiles Children's Dentistry" 
-                    className="w-64 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                    className="w-80 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Right Trust Indicators */}
-            <div className="lg:col-span-2 space-y-4">
+            {/* Right Trust Indicators - Smaller */}
+            <div className="lg:col-span-2 space-y-3">
               {[
                 { 
                   icon: Star, 
@@ -124,20 +124,20 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
-                           shadow-lg hover:shadow-xl
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-lg p-3
+                           shadow-md hover:shadow-lg
                            transform hover:-translate-y-1 hover:scale-105
                            transition-all duration-500
                            animate-fade-in border border-purple-100"
                   style={{ animationDelay: `${(index + 2) * 0.3}s` }}
                 >
-                  <div className={`w-10 h-10 mb-3 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-5 h-5 text-white" />
+                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                  <h3 className="text-sm font-bold text-gray-900 mb-1">
                     {item.text}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -196,8 +196,8 @@ const Index = () => {
       </section>
 
       {/* Quick Info Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/90 to-pink-600/90" />
+      <section className="py-16 bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 via-purple-600/90 to-pink-600/90" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="space-y-3">

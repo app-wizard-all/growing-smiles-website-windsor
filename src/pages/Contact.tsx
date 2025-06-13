@@ -10,17 +10,19 @@ const Contact = () => {
 
       {/* Contact Content */}
       <section className="py-20 relative">
-        {/* Purple/Pink gradient background elements */}
+        {/* Balanced gradient background elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(15)].map((_, i) => (
             <div
               key={i}
               className={`absolute rounded-full opacity-20 ${
-                i % 3 === 0 
-                  ? 'bg-gradient-to-r from-purple-200 to-pink-200' 
-                  : i % 3 === 1
-                  ? 'bg-gradient-to-r from-teal-200 to-blue-200'
-                  : 'bg-gradient-to-r from-pink-200 to-purple-200'
+                i % 4 === 0 
+                  ? 'bg-gradient-to-r from-teal-200 to-blue-200' 
+                  : i % 4 === 1
+                  ? 'bg-gradient-to-r from-purple-200 to-pink-200'
+                  : i % 4 === 2
+                  ? 'bg-gradient-to-r from-pink-200 to-purple-200'
+                  : 'bg-gradient-to-r from-blue-200 to-teal-200'
               }`}
               style={{
                 width: Math.random() * 100 + 50,
@@ -46,13 +48,13 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-white/90 backdrop-blur-sm p-10 rounded-3xl shadow-xl border border-purple-100">
-                <h2 className="text-3xl font-bold purple-pink-gradient-text mb-8">Office Information</h2>
+              <div className="bg-white/90 backdrop-blur-sm p-10 rounded-3xl shadow-xl border border-teal-100">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-8">Office Information</h2>
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-8 h-8 text-purple-600" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-8 h-8 text-teal-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2 text-lg">Address</h3>
@@ -66,8 +68,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-8 h-8 text-teal-600" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-8 h-8 text-purple-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2 text-lg">Phone</h3>
@@ -81,8 +83,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-8 h-8 text-purple-600" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-8 h-8 text-teal-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-3 text-lg">Office Hours</h3>
@@ -105,7 +107,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-teal-500 via-purple-500 to-pink-500 p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
                 {/* Background Logo */}
                 <div className="absolute top-4 right-4 opacity-20">
                   <img 
@@ -135,7 +137,7 @@ const Contact = () => {
             {/* Map Section */}
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border border-purple-100">
               <div className="p-8 border-b border-gray-100">
-                <h2 className="text-3xl font-bold purple-pink-gradient-text mb-2">Find Us</h2>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-2">Find Us</h2>
                 <p className="text-gray-600">Located in the heart of Windsor, Ontario</p>
               </div>
               
@@ -158,7 +160,7 @@ const Contact = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-purple-900 to-pink-900 text-white py-16 relative overflow-hidden">
+      <footer className="bg-gradient-to-r from-teal-900 via-purple-900 to-pink-900 text-white py-16 relative overflow-hidden">
         {/* Subtle Logo in Footer */}
         <div className="absolute top-4 right-4 opacity-10">
           <img 
