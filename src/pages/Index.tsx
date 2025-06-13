@@ -55,7 +55,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             
             {/* Left Trust Indicators */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4">
               {[
                 { 
                   icon: Smile, 
@@ -72,17 +72,17 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6
-                           shadow-xl hover:shadow-2xl
-                           transform hover:-translate-y-2 hover:scale-105
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
+                           shadow-lg hover:shadow-xl
+                           transform hover:-translate-y-1 hover:scale-105
                            transition-all duration-500
                            animate-fade-in border border-teal-100"
                   style={{ animationDelay: `${index * 0.3}s` }}
                 >
-                  <div className={`w-14 h-14 mb-4 rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-7 h-7 text-white" />
+                  <div className={`w-10 h-10 mb-3 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">
                     {item.text}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -92,22 +92,22 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Center Logo */}
+            {/* Center Logo - Made Bigger */}
             <div className="lg:col-span-1 flex justify-center">
               <div className="relative">
-                <div className="absolute -inset-6 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-purple-100">
+                <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
+                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
                   <img 
                     src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                     alt="Growing Smiles Children's Dentistry" 
-                    className="w-48 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                    className="w-64 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
             </div>
 
             {/* Right Trust Indicators */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4">
               {[
                 { 
                   icon: Star, 
@@ -124,17 +124,17 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6
-                           shadow-xl hover:shadow-2xl
-                           transform hover:-translate-y-2 hover:scale-105
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
+                           shadow-lg hover:shadow-xl
+                           transform hover:-translate-y-1 hover:scale-105
                            transition-all duration-500
                            animate-fade-in border border-purple-100"
                   style={{ animationDelay: `${(index + 2) * 0.3}s` }}
                 >
-                  <div className={`w-14 h-14 mb-4 rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-7 h-7 text-white" />
+                  <div className={`w-10 h-10 mb-3 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">
                     {item.text}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">

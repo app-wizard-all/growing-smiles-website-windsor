@@ -5,11 +5,34 @@ import Navbar from '../components/NavBar';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50">
       <Navbar />
 
       {/* Contact Content */}
       <section className="py-20 relative">
+        {/* Purple/Pink gradient background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute rounded-full opacity-20 ${
+                i % 3 === 0 
+                  ? 'bg-gradient-to-r from-purple-200 to-pink-200' 
+                  : i % 3 === 1
+                  ? 'bg-gradient-to-r from-teal-200 to-blue-200'
+                  : 'bg-gradient-to-r from-pink-200 to-purple-200'
+              }`}
+              style={{
+                width: Math.random() * 100 + 50,
+                height: Math.random() * 100 + 50,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 8}s`,
+              }}
+            />
+          ))}
+        </div>
+
         {/* Subtle Logo Brand Mark */}
         <div className="absolute top-8 right-8 opacity-5">
           <img 
@@ -19,17 +42,17 @@ const Contact = () => {
           />
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Office Information</h2>
+              <div className="bg-white/90 backdrop-blur-sm p-10 rounded-3xl shadow-xl border border-purple-100">
+                <h2 className="text-3xl font-bold purple-pink-gradient-text mb-8">Office Information</h2>
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-8 h-8 text-primary" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-8 h-8 text-purple-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2 text-lg">Address</h3>
@@ -43,14 +66,14 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-8 h-8 text-secondary" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-8 h-8 text-teal-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2 text-lg">Phone</h3>
                       <a 
                         href="tel:519-800-4500" 
-                        className="text-primary hover:text-primary/80 text-2xl font-bold transition-colors"
+                        className="text-purple-600 hover:text-purple-700 text-2xl font-bold transition-colors"
                       >
                         519-800-4500
                       </a>
@@ -58,8 +81,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-8 h-8 text-primary" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-8 h-8 text-purple-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-3 text-lg">Office Hours</h3>
@@ -82,7 +105,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary to-secondary p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
                 {/* Background Logo */}
                 <div className="absolute top-4 right-4 opacity-20">
                   <img 
@@ -101,7 +124,7 @@ const Contact = () => {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Calendar className="w-5 h-5" />
                   Request Appointment
@@ -110,9 +133,9 @@ const Contact = () => {
             </div>
 
             {/* Map Section */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border border-purple-100">
               <div className="p-8 border-b border-gray-100">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Find Us</h2>
+                <h2 className="text-3xl font-bold purple-pink-gradient-text mb-2">Find Us</h2>
                 <p className="text-gray-600">Located in the heart of Windsor, Ontario</p>
               </div>
               
@@ -135,7 +158,7 @@ const Contact = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 relative overflow-hidden">
+      <footer className="bg-gradient-to-r from-purple-900 to-pink-900 text-white py-16 relative overflow-hidden">
         {/* Subtle Logo in Footer */}
         <div className="absolute top-4 right-4 opacity-10">
           <img 
@@ -156,11 +179,11 @@ const Contact = () => {
             </div>
             <div className="space-y-3 mb-8">
               <h3 className="text-2xl font-semibold">Growing Smiles Children's Dentistry</h3>
-              <p className="text-gray-300 text-lg">1400 Front Rd, Windsor ON N9J 2B3</p>
-              <p className="text-gray-300 text-lg">Phone: 519-800-4500</p>
+              <p className="text-purple-200 text-lg">1400 Front Rd, Windsor ON N9J 2B3</p>
+              <p className="text-purple-200 text-lg">Phone: 519-800-4500</p>
             </div>
-            <div className="border-t border-gray-700 pt-8">
-              <p className="text-gray-400">
+            <div className="border-t border-purple-700 pt-8">
+              <p className="text-purple-300">
                 © {new Date().getFullYear()} Growing Smiles Children's Dentistry. All rights reserved.
               </p>
             </div>
