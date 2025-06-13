@@ -99,12 +99,23 @@
     50% { opacity: 1; }
   }
 
+  @keyframes purple-pink-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .animate-float {
     animation: float-gentle 20s ease-in-out infinite;
   }
 
   .animate-gradient {
     animation: gradient-shift 8s ease infinite;
+    background-size: 300% 300%;
+  }
+
+  .animate-purple-pink-gradient {
+    animation: purple-pink-shift 8s ease infinite;
     background-size: 300% 300%;
   }
 
@@ -139,7 +150,7 @@
     @apply relative font-semibold transition-all duration-300
            after:content-[''] after:absolute after:w-full 
            after:scale-x-0 after:h-0.5 after:bottom-0 
-           after:left-0 after:bg-gradient-to-r after:from-teal-500 after:to-blue-500
+           after:left-0 after:bg-gradient-to-r after:from-teal-500 after:to-purple-500
            after:origin-bottom-right
            after:transition-transform after:duration-300 
            hover:after:scale-x-100 
@@ -148,16 +159,31 @@
 
   .primary-button {
     @apply inline-flex items-center justify-center gap-3
-           bg-gradient-to-r from-teal-500 to-blue-500
+           bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500
            text-white text-xl px-8 py-4 rounded-full 
-           font-bold shadow-xl shadow-teal-500/25
-           hover:shadow-2xl hover:shadow-blue-500/25 
+           font-bold shadow-xl shadow-purple-500/25
+           hover:shadow-2xl hover:shadow-pink-500/25 
+           transform hover:-translate-y-1 hover:scale-105
+           transition-all duration-300;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-3
+           bg-gradient-to-r from-purple-500 to-pink-500
+           text-white text-xl px-8 py-4 rounded-full 
+           font-bold shadow-xl shadow-purple-500/25
+           hover:shadow-2xl hover:shadow-pink-500/25 
            transform hover:-translate-y-1 hover:scale-105
            transition-all duration-300;
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent 
-           bg-gradient-to-r from-teal-600 via-blue-600 to-teal-600;
+           bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600;
+  }
+
+  .purple-pink-gradient-text {
+    @apply bg-clip-text text-transparent 
+           bg-gradient-to-r from-purple-600 to-pink-600;
   }
 }

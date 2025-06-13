@@ -24,7 +24,7 @@ const Navbar = () => {
           {/* Logo - Enhanced presentation */}
           <Link to="/" className="flex items-center group">
             <div className="relative">
-              <div className="absolute -inset-2 bg-gradient-to-r from-teal-400/20 to-blue-400/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                 alt="Growing Smiles Children's Dentistry"
@@ -54,7 +54,7 @@ const Navbar = () => {
               href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <Calendar className="w-5 h-5" />
               Book Appointment
@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-xl text-gray-600 hover:text-primary hover:bg-teal-50 transition-all duration-300"
+              className="p-2 rounded-xl text-gray-600 hover:text-primary hover:bg-purple-50 transition-all duration-300"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -86,8 +86,8 @@ const Navbar = () => {
                   to={item.href}
                   className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                     isActive(item.href)
-                      ? 'text-primary bg-teal-50 border border-teal-200'
-                      : 'text-gray-700 hover:text-primary hover:bg-teal-50'
+                      ? 'text-primary bg-purple-50 border border-purple-200'
+                      : 'text-gray-700 hover:text-primary hover:bg-purple-50'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -98,7 +98,7 @@ const Navbar = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold mx-4"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold mx-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="w-5 h-5" />
