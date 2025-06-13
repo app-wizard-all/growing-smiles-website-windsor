@@ -93,7 +93,7 @@ const Index = () => {
             </div>
 
             {/* Center Logo - Much Bigger */}
-            <div className="lg:col-span-5 flex justify-center">
+            <div className="lg:col-span-8 flex justify-center">
               <div className="relative">
                 <div className="absolute -inset-12 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
                 <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-purple-100">
