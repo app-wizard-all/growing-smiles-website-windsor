@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { Mail, Phone, MapPin, GraduationCap, Award, Heart } from "lucide-react";
+
+import { Mail, Phone, MapPin, GraduationCap, Award, Heart, Users } from "lucide-react";
 import Navbar from '../components/NavBar';
 
 const Dentist = () => {
-  const [dentistPhoto, setDentistPhoto] = useState<string | null>(null);
-
   // All backdrop elements including the uploaded image
   const backdropElements = [
     "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
@@ -14,29 +12,18 @@ const Dentist = () => {
     "/lovable-uploads/987ffbe2-6fea-4069-83d6-d10900bd56d4.png"  // uploaded growing smiles
   ];
 
-  const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setDentistPhoto(e.target?.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50">
       <Navbar />
       
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Reduced backdrop elements with better spacing */}
+        {/* Backdrop elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className={`absolute rounded-full opacity-15 ${
+              className={`absolute rounded-full opacity-8 ${
                 i % 4 === 0 
                   ? 'bg-gradient-to-r from-teal-200 to-blue-200' 
                   : i % 4 === 1
@@ -46,8 +33,8 @@ const Dentist = () => {
                   : 'bg-gradient-to-r from-blue-200 to-teal-200'
               }`}
               style={{
-                width: Math.random() * 80 + 50,
-                height: Math.random() * 80 + 50,
+                width: Math.random() * 60 + 40,
+                height: Math.random() * 60 + 40,
                 left: `${Math.random() * 80 + 10}%`,
                 top: `${Math.random() * 80 + 10}%`,
                 animationDelay: `${Math.random() * 8}s`,
@@ -56,15 +43,15 @@ const Dentist = () => {
           ))}
           
           {/* Logo backdrop elements */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <img
               key={`backdrop-${i}`}
               src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
               alt=""
-              className="absolute opacity-15 animate-float"
+              className="absolute opacity-8 animate-float"
               style={{
-                width: Math.random() * 70 + 60,
-                height: Math.random() * 70 + 60,
+                width: Math.random() * 50 + 50,
+                height: Math.random() * 50 + 50,
                 left: `${Math.random() * 70 + 15}%`,
                 top: `${Math.random() * 70 + 15}%`,
                 animationDelay: `${Math.random() * 10}s`,
@@ -79,10 +66,10 @@ const Dentist = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
-              Meet Dr. Sarah Johnson
+              Meet Dr. Samita Gumber
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Dedicated pediatric dentist committed to creating positive dental experiences for children
+              Board-certified pediatric dentist dedicated to creating positive dental experiences for children
             </p>
           </div>
 
@@ -91,59 +78,22 @@ const Dentist = () => {
             {/* Photo Section */}
             <div className="space-y-8">
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-teal-100">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">Doctor's Photo</h2>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">Dr. Samita Gumber (Dr. Sam)</h2>
                 
-                {/* Photo Display/Upload Area */}
-                <div className="relative">
-                  {dentistPhoto ? (
-                    <div className="relative">
-                      <img 
-                        src={dentistPhoto} 
-                        alt="Dr. Sarah Johnson" 
-                        className="w-full h-96 object-cover rounded-2xl shadow-lg"
-                      />
-                      <button 
-                        onClick={() => setDentistPhoto(null)}
-                        className="absolute top-4 right-4 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="border-2 border-dashed border-purple-300 rounded-2xl p-12 text-center hover:border-purple-400 transition-colors">
-                      <div className="space-y-4">
-                        <div className="w-24 h-24 bg-gradient-to-br from-teal-100 to-purple-100 rounded-full flex items-center justify-center mx-auto">
-                          <img 
-                            src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png" 
-                            alt="Placeholder" 
-                            className="w-16 h-16 object-contain opacity-60"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="photo-upload" className="cursor-pointer">
-                            <span className="bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 inline-block">
-                              Upload Photo
-                            </span>
-                          </label>
-                          <input 
-                            id="photo-upload"
-                            type="file" 
-                            accept="image/*" 
-                            onChange={handlePhotoUpload}
-                            className="hidden"
-                          />
-                        </div>
-                        <p className="text-gray-500">Upload a professional photo</p>
-                      </div>
-                    </div>
-                  )}
+                {/* Doctor's Photo */}
+                <div className="relative mb-8">
+                  <img 
+                    src="/lovable-uploads/553908b6-ed98-41a3-b2f6-aea154e79a6f.png" 
+                    alt="Dr. Samita Gumber" 
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                  />
                 </div>
 
                 {/* Contact Info */}
-                <div className="mt-8 space-y-4">
+                <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-purple-600" />
-                    <span className="text-gray-700">dr.johnson@growingsmiles.ca</span>
+                    <span className="text-gray-700">dr.gumber@growingsmiles.ca</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-teal-600" />
@@ -160,27 +110,23 @@ const Dentist = () => {
             {/* Bio Section */}
             <div className="space-y-8">
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-purple-100">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-6">About Dr. Johnson</h2>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-6">About Dr. Gumber</h2>
                 
                 <div className="space-y-6">
                   <p className="text-gray-700 leading-relaxed">
-                    Dr. Sarah Johnson is a passionate pediatric dentist with over 10 years of experience 
-                    in providing gentle, comprehensive dental care for children. She believes that every 
-                    child deserves a positive dental experience that sets the foundation for a lifetime 
-                    of good oral health.
+                    Dr. Samita Gumber (Dr. Sam to her patients) is a board-certified pediatric dentist who comes from a diverse background. Dr. Gumber was born and brought up in India, where she completed dental school and graduated with a master's degree in pediatric dentistry.
                   </p>
                   
                   <p className="text-gray-700 leading-relaxed">
-                    Dr. Johnson completed her Doctor of Dental Surgery degree at the University of Toronto 
-                    and went on to specialize in pediatric dentistry at the Hospital for Sick Children. 
-                    She is committed to staying current with the latest advances in pediatric dental care 
-                    and regularly attends continuing education courses.
+                    She moved to the United States in 2016 and completed her second master's degree in pediatric dentistry at the University of Michigan, Ann Arbor, with her research on children with autism spectrum disorder.
                   </p>
 
                   <p className="text-gray-700 leading-relaxed">
-                    When she's not caring for her young patients, Dr. Johnson enjoys spending time with 
-                    her own family, reading, and volunteering in the community. She is fluent in English 
-                    and French, allowing her to serve Windsor's diverse community.
+                    Dr. Gumber firmly believes in giving back to the community and has participated in multiple community dental health programs in India and the United States. She is also an adjunct clinical assistant professor at the University of Michigan School of Dentistry and enjoys teaching undergraduate students and pediatric dentistry residents.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    In her spare time, Dr. Gumber enjoys traveling, outdoor activities, and playing badminton. She is a huge Bhangra (Punjabi Folk dance) and Bollywood fan and loves to dance on Punjabi and Bollywood numbers.
                   </p>
                 </div>
               </div>
@@ -195,28 +141,48 @@ const Dentist = () => {
                       <GraduationCap className="w-6 h-6 text-teal-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Doctor of Dental Surgery</h4>
-                      <p className="text-gray-600">University of Toronto Faculty of Dentistry</p>
+                      <h4 className="font-semibold text-gray-900">Master's Degree in Pediatric Dentistry</h4>
+                      <p className="text-gray-600">University of Michigan, Ann Arbor</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Award className="w-6 h-6 text-purple-600" />
+                      <GraduationCap className="w-6 h-6 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Pediatric Dentistry Specialty</h4>
-                      <p className="text-gray-600">Hospital for Sick Children, Toronto</p>
+                      <h4 className="font-semibold text-gray-900">Master's Degree in Pediatric Dentistry</h4>
+                      <p className="text-gray-600">Dental School, India</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-pink-100 to-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Heart className="w-6 h-6 text-pink-600" />
+                      <Users className="w-6 h-6 text-pink-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Royal College of Dental Surgeons</h4>
-                      <p className="text-gray-600">Licensed in Ontario</p>
+                      <h4 className="font-semibold text-gray-900">Adjunct Clinical Assistant Professor</h4>
+                      <p className="text-gray-600">University of Michigan School of Dentistry</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Award className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Professional Memberships</h4>
+                      <p className="text-gray-600">AAPD, MAPD, ODA, and RCDSO</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Heart className="w-6 h-6 text-teal-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Community Service</h4>
+                      <p className="text-gray-600">Multiple community dental health programs in India and the United States</p>
                     </div>
                   </div>
                 </div>
