@@ -1,20 +1,28 @@
-
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Calendar } from "lucide-react";
 import Navbar from '../components/NavBar';
 
 const Contact = () => {
+  // All backdrop elements including the uploaded image
+  const backdropElements = [
+    "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
+    "/lovable-uploads/28e42270-02db-4ce8-9363-2e0ef2b3499c.png", // purple girl
+    "/lovable-uploads/35d275ef-a5f5-4173-890a-03d89aa2bdef.png", // yellow tooth
+    "/lovable-uploads/28f60642-0227-4ede-9da6-02e0c713ac32.png", // growing smiles text
+    "/lovable-uploads/987ffbe2-6fea-4069-83d6-d10900bd56d4.png"  // uploaded growing smiles
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50">
       <Navbar />
 
       {/* Contact Content */}
       <section className="py-20 relative">
-        {/* Balanced gradient background elements */}
+        {/* Enhanced backdrop with logo elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(15)].map((_, i) => (
             <div
-              key={i}
+              key={`shape-${i}`}
               className={`absolute rounded-full opacity-20 ${
                 i % 4 === 0 
                   ? 'bg-gradient-to-r from-teal-200 to-blue-200' 
@@ -30,6 +38,24 @@ const Contact = () => {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 8}s`,
+              }}
+            />
+          ))}
+          
+          {/* Logo backdrop elements */}
+          {[...Array(12)].map((_, i) => (
+            <img
+              key={`backdrop-${i}`}
+              src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
+              alt=""
+              className="absolute opacity-20 animate-float"
+              style={{
+                width: Math.random() * 100 + 60,
+                height: Math.random() * 100 + 60,
+                left: `${Math.random() * 90}%`,
+                top: `${Math.random() * 90}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${Math.random() * 20 + 20}s`
               }}
             />
           ))}

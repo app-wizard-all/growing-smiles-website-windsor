@@ -20,12 +20,13 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // All backdrop elements including tooth and wording
+  // All backdrop elements including the uploaded image
   const backdropElements = [
     "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
     "/lovable-uploads/28e42270-02db-4ce8-9363-2e0ef2b3499c.png", // purple girl
     "/lovable-uploads/35d275ef-a5f5-4173-890a-03d89aa2bdef.png", // yellow tooth
-    "/lovable-uploads/28f60642-0227-4ede-9da6-02e0c713ac32.png"  // growing smiles text
+    "/lovable-uploads/28f60642-0227-4ede-9da6-02e0c713ac32.png", // growing smiles text
+    "/lovable-uploads/987ffbe2-6fea-4069-83d6-d10900bd56d4.png"  // uploaded growing smiles
   ];
 
   return (
@@ -43,8 +44,8 @@ const Index = () => {
                 key={`shape-${i}`}
                 className={`absolute rounded-full animate-float ${
                   i % 2 === 0 
-                    ? 'bg-gradient-to-r from-teal-200/30 to-blue-200/30' 
-                    : 'bg-gradient-to-r from-purple-200/30 to-pink-200/30'
+                    ? 'bg-gradient-to-r from-teal-200/40 to-blue-200/40' 
+                    : 'bg-gradient-to-r from-purple-200/40 to-pink-200/40'
                 }`}
                 style={{
                   width: Math.random() * 120 + 80,
@@ -58,15 +59,15 @@ const Index = () => {
             ))}
             
             {/* Enhanced backdrop logo elements */}
-            {[...Array(12)].map((_, i) => (
+            {[...Array(18)].map((_, i) => (
               <img
                 key={`backdrop-${i}`}
                 src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
                 alt=""
-                className="absolute opacity-15 animate-float"
+                className="absolute opacity-25 animate-float"
                 style={{
-                  width: Math.random() * 100 + 60,
-                  height: Math.random() * 100 + 60,
+                  width: Math.random() * 120 + 80,
+                  height: Math.random() * 120 + 80,
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
                   animationDelay: `${Math.random() * 10}s`,
@@ -81,17 +82,14 @@ const Index = () => {
         <div className="relative w-full max-w-6xl mx-auto px-4 mb-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             
-            {/* Left Column: Main Logo */}
+            {/* Left Column: Main Logo - Borderless */}
             <div className="flex justify-center">
               <div className="relative">
-                <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
-                  <img 
-                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                    alt="Growing Smiles Children's Dentistry" 
-                    className="w-80 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                <img 
+                  src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                  alt="Growing Smiles Children's Dentistry" 
+                  className="w-96 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
 
@@ -148,59 +146,57 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Prominent Appointment Section */}
-      <section className="py-16 bg-gradient-to-b from-white via-purple-50 to-pink-50 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10" />
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Streamlined Appointment Section */}
+      <section className="py-12 bg-gradient-to-br from-teal-50 via-purple-50 to-pink-50 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-pink-500/5" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Prominent Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-2xl font-bold shadow-2xl mb-6">
-              <Calendar className="w-8 h-8" />
-              Book Your Child's Appointment Today!
-            </div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Schedule a visit with our gentle pediatric dentist. Making dental care fun and comfortable for your little ones.
-            </p>
-          </div>
+          {/* Stylized Form Container */}
+          <div className="relative">
+            <div className="absolute -inset-6 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-3xl blur-xl animate-pulse-subtle" />
+            <div className="relative bg-gradient-to-br from-white/95 via-white/90 to-purple-50/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-gradient-to-br from-teal-200/50 to-purple-200/50">
+              
+              {/* Form Header */}
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                  Schedule Your Visit
+                </h2>
+                <p className="text-gray-600">
+                  Book your child's appointment with our gentle pediatric dentist
+                </p>
+              </div>
 
-          {/* Compact Form Container */}
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-lg" />
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-purple-100">
-                {/* Compact Google Form */}
-                <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-inner">
-                  <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true" 
-                    width="100%" 
-                    height="500" 
-                    className="border-0"
-                    title="Appointment Form"
+              {/* Stylized Google Form */}
+              <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-white to-purple-50/30 shadow-inner border border-purple-100/50">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true" 
+                  width="100%" 
+                  height="450" 
+                  className="border-0 rounded-2xl"
+                  title="Appointment Form"
+                >
+                  Loading…
+                </iframe>
+              </div>
+
+              {/* Contact Info Below Form */}
+              <div className="mt-6 text-center">
+                <p className="text-gray-600 mb-4">Need immediate assistance?</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a 
+                    href="tel:519-800-4500" 
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                   >
-                    Loading…
-                  </iframe>
-                </div>
-
-                {/* Contact Info Below Form */}
-                <div className="mt-6 text-center">
-                  <p className="text-gray-600 mb-4">Need immediate assistance?</p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a 
-                      href="tel:519-800-4500" 
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                    >
-                      <Phone className="w-5 h-5" />
-                      Call 519-800-4500
-                    </a>
-                    <Link 
-                      to="/contact" 
-                      className="inline-flex items-center gap-2 border-2 border-purple-500 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-all duration-300"
-                    >
-                      <MapPin className="w-5 h-5" />
-                      View Location
-                    </Link>
-                  </div>
+                    <Phone className="w-5 h-5" />
+                    Call 519-800-4500
+                  </a>
+                  <Link 
+                    to="/contact" 
+                    className="inline-flex items-center gap-2 border-2 border-gradient-to-r from-teal-500 to-purple-500 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-all duration-300"
+                  >
+                    <MapPin className="w-5 h-5" />
+                    View Location
+                  </Link>
                 </div>
               </div>
             </div>
