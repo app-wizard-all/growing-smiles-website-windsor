@@ -21,25 +21,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Enhanced with modern styling */}
-          <Link to="/" className="flex items-center group">
-            <div className="relative">
-              {/* Modern container with gradient border */}
-              <div className="relative bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 p-0.5 rounded-2xl group-hover:shadow-lg transition-all duration-300">
-                <div className="bg-white rounded-2xl p-3">
-                  <img 
-                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                    alt="Growing Smiles Children's Dentistry"
-                    className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-              {/* Glow effect */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
+          {/* Navigation Links - Left Side */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -54,13 +36,33 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            
+          </div>
+
+          {/* Logo - Center Right */}
+          <div className="flex items-center space-x-6">
+            <Link to="/" className="flex items-center group">
+              <div className="relative">
+                {/* Enhanced modern container */}
+                <div className="relative bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 p-1 rounded-2xl group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-white rounded-xl p-4">
+                    <img 
+                      src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                      alt="Growing Smiles Children's Dentistry"
+                      className="h-14 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                {/* Enhanced glow effect */}
+                <div className="absolute -inset-3 bg-gradient-to-r from-teal-400/30 via-purple-400/30 to-pink-400/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </Link>
+
             {/* Book Appointment Button */}
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <Calendar className="w-5 h-5" />
               Book Appointment

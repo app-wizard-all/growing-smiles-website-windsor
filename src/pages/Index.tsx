@@ -20,7 +20,7 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Random backdrop elements from uploaded images
+  // All backdrop elements including tooth and wording
   const backdropElements = [
     "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
     "/lovable-uploads/28e42270-02db-4ce8-9363-2e0ef2b3499c.png", // purple girl
@@ -32,23 +32,23 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50">
       <Navbar />
       
-      {/* Hero Section - Vertical Layout */}
+      {/* Hero Section - Two Column Layout */}
       <section className="relative py-12">
-        {/* Animated Background with Logo Elements */}
+        {/* Enhanced Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div ref={parallaxRef} className="absolute inset-0">
             {/* Floating geometric shapes */}
-            {[...Array(15)].map((_, i) => (
+            {[...Array(12)].map((_, i) => (
               <div
                 key={`shape-${i}`}
                 className={`absolute rounded-full animate-float ${
                   i % 2 === 0 
-                    ? 'bg-gradient-to-r from-teal-200/20 to-blue-200/20' 
-                    : 'bg-gradient-to-r from-purple-200/20 to-pink-200/20'
+                    ? 'bg-gradient-to-r from-teal-200/30 to-blue-200/30' 
+                    : 'bg-gradient-to-r from-purple-200/30 to-pink-200/30'
                 }`}
                 style={{
-                  width: Math.random() * 120 + 60,
-                  height: Math.random() * 120 + 60,
+                  width: Math.random() * 120 + 80,
+                  height: Math.random() * 120 + 80,
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 8}s`,
@@ -57,16 +57,16 @@ const Index = () => {
               />
             ))}
             
-            {/* Random backdrop logo elements */}
-            {[...Array(8)].map((_, i) => (
+            {/* Enhanced backdrop logo elements */}
+            {[...Array(12)].map((_, i) => (
               <img
                 key={`backdrop-${i}`}
                 src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
                 alt=""
-                className="absolute opacity-5 animate-float"
+                className="absolute opacity-15 animate-float"
                 style={{
-                  width: Math.random() * 80 + 40,
-                  height: Math.random() * 80 + 40,
+                  width: Math.random() * 100 + 60,
+                  height: Math.random() * 100 + 60,
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
                   animationDelay: `${Math.random() * 10}s`,
@@ -77,24 +77,26 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Vertical Logo and Trust Indicators Layout */}
-        <div className="relative w-full max-w-4xl mx-auto px-4 mb-8">
-          <div className="flex flex-col items-center space-y-8">
+        {/* Two Column Layout: Logo Left, Trust Indicators Right */}
+        <div className="relative w-full max-w-6xl mx-auto px-4 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             
-            {/* Main Logo - Larger */}
-            <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
-                <img 
-                  src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                  alt="Growing Smiles Children's Dentistry" 
-                  className="w-96 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
-                />
+            {/* Left Column: Main Logo */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
+                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                    alt="Growing Smiles Children's Dentistry" 
+                    className="w-80 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Trust Indicators - Horizontal Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
+            {/* Right Column: Trust Indicators */}
+            <div className="grid grid-cols-2 gap-4">
               {[
                 { 
                   icon: Smile, 
@@ -130,10 +132,10 @@ const Index = () => {
                            animate-fade-in border border-teal-100"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className={`w-10 h-10 mb-3 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <item.icon className="w-5 h-5 text-white" />
+                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                    <item.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-2 text-center">
+                  <h3 className="text-sm font-bold text-gray-900 mb-1 text-center">
                     {item.text}
                   </h3>
                   <p className="text-gray-600 text-xs leading-relaxed text-center">
@@ -146,21 +148,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Appointment Section - Smaller Form */}
-      <section className="py-12 bg-gradient-to-b from-white via-purple-50 to-pink-50 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Appointment Form Container - Smaller */}
-          <div className="max-w-4xl mx-auto">
+      {/* Prominent Appointment Section */}
+      <section className="py-16 bg-gradient-to-b from-white via-purple-50 to-pink-50 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Prominent Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-2xl font-bold shadow-2xl mb-6">
+              <Calendar className="w-8 h-8" />
+              Book Your Child's Appointment Today!
+            </div>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Schedule a visit with our gentle pediatric dentist. Making dental care fun and comfortable for your little ones.
+            </p>
+          </div>
+
+          {/* Compact Form Container */}
+          <div className="max-w-3xl mx-auto">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-lg" />
               <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-purple-100">
-                {/* Google Form - Smaller Height */}
+                {/* Compact Google Form */}
                 <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-inner">
                   <iframe 
                     src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true" 
                     width="100%" 
-                    height="600" 
+                    height="500" 
                     className="border-0"
                     title="Appointment Form"
                   >
