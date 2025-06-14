@@ -21,15 +21,21 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Enhanced presentation */}
+          {/* Logo - Enhanced with modern styling */}
           <Link to="/" className="flex items-center group">
             <div className="relative">
-              <div className="absolute -inset-2 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img 
-                src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                alt="Growing Smiles Children's Dentistry"
-                className="relative h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
-              />
+              {/* Modern container with gradient border */}
+              <div className="relative bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 p-0.5 rounded-2xl group-hover:shadow-lg transition-all duration-300">
+                <div className="bg-white rounded-2xl p-3">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                    alt="Growing Smiles Children's Dentistry"
+                    className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+              {/* Glow effect */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </Link>
 

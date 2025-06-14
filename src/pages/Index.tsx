@@ -20,18 +20,27 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Random backdrop elements from uploaded images
+  const backdropElements = [
+    "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
+    "/lovable-uploads/28e42270-02db-4ce8-9363-2e0ef2b3499c.png", // purple girl
+    "/lovable-uploads/35d275ef-a5f5-4173-890a-03d89aa2bdef.png", // yellow tooth
+    "/lovable-uploads/28f60642-0227-4ede-9da6-02e0c713ac32.png"  // growing smiles text
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50">
       <Navbar />
       
-      {/* Hero Section - Enhanced Logo Presentation with Side Trust Indicators */}
-      <section className="relative py-16">
-        {/* Animated Background */}
+      {/* Hero Section - Vertical Layout */}
+      <section className="relative py-12">
+        {/* Animated Background with Logo Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div ref={parallaxRef} className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
+            {/* Floating geometric shapes */}
+            {[...Array(15)].map((_, i) => (
               <div
-                key={i}
+                key={`shape-${i}`}
                 className={`absolute rounded-full animate-float ${
                   i % 2 === 0 
                     ? 'bg-gradient-to-r from-teal-200/20 to-blue-200/20' 
@@ -47,15 +56,45 @@ const Index = () => {
                 }}
               />
             ))}
+            
+            {/* Random backdrop logo elements */}
+            {[...Array(8)].map((_, i) => (
+              <img
+                key={`backdrop-${i}`}
+                src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
+                alt=""
+                className="absolute opacity-5 animate-float"
+                style={{
+                  width: Math.random() * 80 + 40,
+                  height: Math.random() * 80 + 40,
+                  left: `${Math.random() * 90}%`,
+                  top: `${Math.random() * 90}%`,
+                  animationDelay: `${Math.random() * 10}s`,
+                  animationDuration: `${Math.random() * 20 + 20}s`
+                }}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Logo and Trust Indicators Layout */}
-        <div className="relative w-full max-w-7xl mx-auto px-4 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-7 gap-6 items-center">
+        {/* Vertical Logo and Trust Indicators Layout */}
+        <div className="relative w-full max-w-4xl mx-auto px-4 mb-8">
+          <div className="flex flex-col items-center space-y-8">
             
-            {/* Left Trust Indicators - Smaller */}
-            <div className="lg:col-span-1 space-y-3">
+            {/* Main Logo - Larger */}
+            <div className="relative">
+              <div className="absolute -inset-8 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-purple-100">
+                <img 
+                  src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                  alt="Growing Smiles Children's Dentistry" 
+                  className="w-96 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            {/* Trust Indicators - Horizontal Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl">
               {[
                 { 
                   icon: Smile, 
@@ -68,47 +107,7 @@ const Index = () => {
                   text: "Gentle Care", 
                   color: "from-purple-500 to-purple-600", 
                   description: "Expert and caring approach" 
-                }
-              ].map((item, index) => (
-                <div 
-                  key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-lg p-3
-                           shadow-md hover:shadow-lg
-                           transform hover:-translate-y-1 hover:scale-105
-                           transition-all duration-500
-                           animate-fade-in border border-teal-100"
-                  style={{ animationDelay: `${index * 0.3}s` }}
-                >
-                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-4 h-4 text-white" />
-                  </div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-1">
-                    {item.text}
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Center Logo - Much Bigger */}
-            <div className="lg:col-span-6 flex justify-center">
-              <div className="relative">
-                <div className="absolute -inset-12 bg-gradient-to-r from-teal-400/30 via-purple-400/20 to-pink-400/30 rounded-3xl blur-xl opacity-60 animate-pulse-subtle" />
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-purple-100">
-                  <img 
-                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                    alt="Growing Smiles Children's Dentistry" 
-                    className="w-110 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Right Trust Indicators - Smaller */}
-            <div className="lg:col-span-1 space-y-3">
-              {[
+                },
                 { 
                   icon: Star, 
                   text: "Fun Experience", 
@@ -124,20 +123,20 @@ const Index = () => {
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-lg p-3
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
                            shadow-md hover:shadow-lg
                            transform hover:-translate-y-1 hover:scale-105
                            transition-all duration-500
-                           animate-fade-in border border-purple-100"
-                  style={{ animationDelay: `${(index + 2) * 0.3}s` }}
+                           animate-fade-in border border-teal-100"
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-4 h-4 text-white" />
+                  <div className={`w-10 h-10 mb-3 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                    <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-1">
+                  <h3 className="text-sm font-bold text-gray-900 mb-2 text-center">
                     {item.text}
                   </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">
+                  <p className="text-gray-600 text-xs leading-relaxed text-center">
                     {item.description}
                   </p>
                 </div>
@@ -147,21 +146,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Appointment Section - Now Higher Up */}
-      <section className="py-16 bg-gradient-to-b from-white via-purple-50 to-pink-50 relative">
+      {/* Appointment Section - Smaller Form */}
+      <section className="py-12 bg-gradient-to-b from-white via-purple-50 to-pink-50 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Appointment Form Container */}
-          <div className="max-w-5xl mx-auto">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Appointment Form Container - Smaller */}
+          <div className="max-w-4xl mx-auto">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-lg" />
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-purple-100">
-                {/* Google Form */}
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-purple-100">
+                {/* Google Form - Smaller Height */}
                 <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-inner">
                   <iframe 
                     src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true" 
                     width="100%" 
-                    height="800" 
+                    height="600" 
                     className="border-0"
                     title="Appointment Form"
                   >
@@ -170,7 +169,7 @@ const Index = () => {
                 </div>
 
                 {/* Contact Info Below Form */}
-                <div className="mt-8 text-center">
+                <div className="mt-6 text-center">
                   <p className="text-gray-600 mb-4">Need immediate assistance?</p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a 
