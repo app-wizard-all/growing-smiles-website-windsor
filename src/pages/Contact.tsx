@@ -18,12 +18,12 @@ const Contact = () => {
 
       {/* Contact Content */}
       <section className="py-20 relative">
-        {/* Enhanced backdrop with logo elements */}
+        {/* Reduced backdrop with better spacing */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={`shape-${i}`}
-              className={`absolute rounded-full opacity-20 ${
+              className={`absolute rounded-full opacity-15 ${
                 i % 4 === 0 
                   ? 'bg-gradient-to-r from-teal-200 to-blue-200' 
                   : i % 4 === 1
@@ -33,27 +33,27 @@ const Contact = () => {
                   : 'bg-gradient-to-r from-blue-200 to-teal-200'
               }`}
               style={{
-                width: Math.random() * 100 + 50,
-                height: Math.random() * 100 + 50,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                width: Math.random() * 80 + 50,
+                height: Math.random() * 80 + 50,
+                left: `${Math.random() * 80 + 10}%`,
+                top: `${Math.random() * 80 + 10}%`,
                 animationDelay: `${Math.random() * 8}s`,
               }}
             />
           ))}
           
-          {/* Logo backdrop elements */}
-          {[...Array(12)].map((_, i) => (
+          {/* Logo backdrop elements with better spacing */}
+          {[...Array(6)].map((_, i) => (
             <img
               key={`backdrop-${i}`}
               src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
               alt=""
-              className="absolute opacity-20 animate-float"
+              className="absolute opacity-15 animate-float"
               style={{
-                width: Math.random() * 100 + 60,
-                height: Math.random() * 100 + 60,
-                left: `${Math.random() * 90}%`,
-                top: `${Math.random() * 90}%`,
+                width: Math.random() * 70 + 60,
+                height: Math.random() * 70 + 60,
+                left: `${Math.random() * 70 + 15}%`,
+                top: `${Math.random() * 70 + 15}%`,
                 animationDelay: `${Math.random() * 10}s`,
                 animationDuration: `${Math.random() * 20 + 20}s`
               }}

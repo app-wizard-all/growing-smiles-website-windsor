@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Calendar, Smile, Heart, Star, Phone, MapPin, Sparkles, Clock, Shield } from "lucide-react";
 import Navbar from '../components/NavBar';
@@ -35,41 +34,41 @@ const Index = () => {
       
       {/* Hero Section - Two Column Layout */}
       <section className="relative py-12">
-        {/* Enhanced Animated Background */}
+        {/* Reduced Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div ref={parallaxRef} className="absolute inset-0">
-            {/* Floating geometric shapes */}
-            {[...Array(12)].map((_, i) => (
+            {/* Fewer floating geometric shapes */}
+            {[...Array(6)].map((_, i) => (
               <div
                 key={`shape-${i}`}
                 className={`absolute rounded-full animate-float ${
                   i % 2 === 0 
-                    ? 'bg-gradient-to-r from-teal-200/40 to-blue-200/40' 
-                    : 'bg-gradient-to-r from-purple-200/40 to-pink-200/40'
+                    ? 'bg-gradient-to-r from-teal-200/20 to-blue-200/20' 
+                    : 'bg-gradient-to-r from-purple-200/20 to-pink-200/20'
                 }`}
                 style={{
-                  width: Math.random() * 120 + 80,
-                  height: Math.random() * 120 + 80,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: Math.random() * 80 + 60,
+                  height: Math.random() * 80 + 60,
+                  left: `${Math.random() * 80 + 10}%`,
+                  top: `${Math.random() * 80 + 10}%`,
                   animationDelay: `${Math.random() * 8}s`,
                   animationDuration: `${Math.random() * 15 + 15}s`
                 }}
               />
             ))}
             
-            {/* Enhanced backdrop logo elements */}
-            {[...Array(18)].map((_, i) => (
+            {/* Reduced backdrop logo elements with better spacing */}
+            {[...Array(8)].map((_, i) => (
               <img
                 key={`backdrop-${i}`}
                 src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
                 alt=""
-                className="absolute opacity-25 animate-float"
+                className="absolute opacity-15 animate-float"
                 style={{
-                  width: Math.random() * 120 + 80,
-                  height: Math.random() * 120 + 80,
-                  left: `${Math.random() * 90}%`,
-                  top: `${Math.random() * 90}%`,
+                  width: Math.random() * 80 + 60,
+                  height: Math.random() * 80 + 60,
+                  left: `${Math.random() * 70 + 15}%`,
+                  top: `${Math.random() * 70 + 15}%`,
                   animationDelay: `${Math.random() * 10}s`,
                   animationDuration: `${Math.random() * 20 + 20}s`
                 }}
@@ -82,14 +81,16 @@ const Index = () => {
         <div className="relative w-full max-w-6xl mx-auto px-4 mb-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             
-            {/* Left Column: Main Logo - Borderless */}
+            {/* Left Column: Main Logo - Restored White Border Style */}
             <div className="flex justify-center">
-              <div className="relative">
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50">
                 <img 
                   src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
                   alt="Growing Smiles Children's Dentistry" 
-                  className="w-96 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                  className="w-80 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
                 />
+                {/* Subtle glow effect */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-teal-300/20 via-purple-300/20 to-pink-300/20 rounded-3xl blur-xl opacity-50" />
               </div>
             </div>
 

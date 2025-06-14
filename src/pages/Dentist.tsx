@@ -1,10 +1,18 @@
-
 import { useState } from "react";
 import { Mail, Phone, MapPin, GraduationCap, Award, Heart } from "lucide-react";
 import Navbar from '../components/NavBar';
 
 const Dentist = () => {
   const [dentistPhoto, setDentistPhoto] = useState<string | null>(null);
+
+  // All backdrop elements including the uploaded image
+  const backdropElements = [
+    "/lovable-uploads/f5749505-21ce-4e5e-a045-feaab8b7a82b.png", // teal figure
+    "/lovable-uploads/28e42270-02db-4ce8-9363-2e0ef2b3499c.png", // purple girl
+    "/lovable-uploads/35d275ef-a5f5-4173-890a-03d89aa2bdef.png", // yellow tooth
+    "/lovable-uploads/28f60642-0227-4ede-9da6-02e0c713ac32.png", // growing smiles text
+    "/lovable-uploads/987ffbe2-6fea-4069-83d6-d10900bd56d4.png"  // uploaded growing smiles
+  ];
 
   const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -23,12 +31,12 @@ const Dentist = () => {
       
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Balanced gradient background elements */}
+        {/* Reduced backdrop elements with better spacing */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className={`absolute rounded-full opacity-20 ${
+              className={`absolute rounded-full opacity-15 ${
                 i % 4 === 0 
                   ? 'bg-gradient-to-r from-teal-200 to-blue-200' 
                   : i % 4 === 1
@@ -38,11 +46,29 @@ const Dentist = () => {
                   : 'bg-gradient-to-r from-blue-200 to-teal-200'
               }`}
               style={{
-                width: Math.random() * 100 + 50,
-                height: Math.random() * 100 + 50,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                width: Math.random() * 80 + 50,
+                height: Math.random() * 80 + 50,
+                left: `${Math.random() * 80 + 10}%`,
+                top: `${Math.random() * 80 + 10}%`,
                 animationDelay: `${Math.random() * 8}s`,
+              }}
+            />
+          ))}
+          
+          {/* Logo backdrop elements */}
+          {[...Array(6)].map((_, i) => (
+            <img
+              key={`backdrop-${i}`}
+              src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
+              alt=""
+              className="absolute opacity-15 animate-float"
+              style={{
+                width: Math.random() * 70 + 60,
+                height: Math.random() * 70 + 60,
+                left: `${Math.random() * 70 + 15}%`,
+                top: `${Math.random() * 70 + 15}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${Math.random() * 20 + 20}s`
               }}
             />
           ))}

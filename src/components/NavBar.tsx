@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Calendar } from "lucide-react";
 import { useState } from "react";
@@ -42,18 +41,16 @@ const Navbar = () => {
           <div className="flex items-center space-x-6">
             <Link to="/" className="flex items-center group">
               <div className="relative">
-                {/* Enhanced modern container */}
-                <div className="relative bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 p-1 rounded-2xl group-hover:shadow-xl transition-all duration-300">
-                  <div className="bg-white rounded-xl p-4">
-                    <img 
-                      src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                      alt="Growing Smiles Children's Dentistry"
-                      className="h-14 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
+                {/* Subtle modern container */}
+                <div className="relative bg-white rounded-xl p-3 shadow-md border border-gray-200 group-hover:shadow-lg transition-all duration-300">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                    alt="Growing Smiles Children's Dentistry"
+                    className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                {/* Enhanced glow effect */}
-                <div className="absolute -inset-3 bg-gradient-to-r from-teal-400/30 via-purple-400/30 to-pink-400/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Very subtle glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-teal-400/10 via-purple-400/10 to-pink-400/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </Link>
 
