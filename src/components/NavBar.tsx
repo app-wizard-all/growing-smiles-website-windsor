@@ -2,13 +2,20 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Calendar } from "lucide-react";
 import { useState } from "react";
 
+type NavigationItem = {
+  name: string;
+  href: string;
+  download?: boolean;
+};
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { name: 'Home', href: '/' },
     { name: 'Meet our Dentist', href: '/dentist' },
+    { name: 'Refer a Patient', href: '/referral-pad.pdf', download: true },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -23,17 +30,28 @@ const Navbar = () => {
           {/* Navigation Links - Left Side */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`nav-link text-lg font-medium transition-all duration-300 ${
-                  isActive(item.href) 
-                    ? 'text-primary after:scale-x-100' 
-                    : 'text-gray-700 hover:text-primary'
-                }`}
-              >
-                {item.name}
-              </Link>
+              item.download ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  download
+                  className="nav-link text-lg font-medium transition-all duration-300 text-gray-700 hover:text-primary"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`nav-link text-lg font-medium transition-all duration-300 ${
+                    isActive(item.href) 
+                      ? 'text-primary after:scale-x-100' 
+                      : 'text-gray-700 hover:text-primary'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -86,18 +104,30 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t border-gray-100">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                    isActive(item.href)
-                      ? 'text-primary bg-purple-50 border border-purple-200'
-                      : 'text-gray-700 hover:text-primary hover:bg-purple-50'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.download ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    download
+                    className="px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 text-gray-700 hover:text-primary hover:bg-purple-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                      isActive(item.href)
+                        ? 'text-primary bg-purple-50 border border-purple-200'
+                        : 'text-gray-700 hover:text-primary hover:bg-purple-50'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
