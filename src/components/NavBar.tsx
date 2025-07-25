@@ -15,7 +15,7 @@ const Navbar = () => {
   const navigation: NavigationItem[] = [
     { name: 'Home', href: '/' },
     { name: 'Meet our Dentist', href: '/dentist' },
-    { name: 'Refer a Patient', href: '/referral-pad.pdf', download: true },
+    { name: 'Refer a Patient', href: '/refer' },
     { name: 'Contact', href: '/contact' },
   ];
 
