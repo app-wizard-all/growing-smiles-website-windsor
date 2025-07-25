@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Dentist from "./pages/Dentist";
+import ReferralPage from "./pages/ReferralPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dentist" element={<Dentist />} />
+          <Route path="/refer" element={<ReferralPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
