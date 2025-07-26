@@ -91,7 +91,7 @@ const Dentist = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-purple-600" />
-                    <span className="text-gray-700">1400 Front Rd, Windsor ON</span>
+                    <span className="text-gray-700">1400 Front Rd, LaSalle ON</span>
                   </div>
                 </div>
                 

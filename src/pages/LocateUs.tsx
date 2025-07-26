@@ -86,7 +86,7 @@ const LocateUs = () => {
                       <div className="text-gray-600 leading-relaxed space-y-1">
                         <p className="font-medium text-lg">Growing Smiles Children's Dentistry</p>
                         <p>1400 Front Rd</p>
-                        <p>Windsor, ON N9J 2B3</p>
+                        <p>LaSalle, ON N9J 2B3</p>
                         <p>Canada</p>
                       </div>
                     </div>
@@ -113,34 +113,42 @@ const LocateUs = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-3 text-lg">Office Hours</h3>
-                      <div className="space-y-2 text-gray-600">
-                        <div className="flex justify-between">
-                          <span className="font-medium">Monday</span>
-                          <span>9:00 AM - 5:00 PM</span>
+                      <div className="space-y-3 text-gray-600 mt-3">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-gradient-to-r from-purple-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-purple-700 block mb-1">Monday</span>
+                            <span className="text-gray-600">9:00 AM - 5:00 PM</span>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-teal-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-teal-700 block mb-1">Tuesday</span>
+                            <span className="text-gray-600">9:00 AM - 5:00 PM</span>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-pink-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-pink-700 block mb-1">Wednesday</span>
+                            <span className="text-gray-600">10:00 AM - 6:00 PM</span>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-blue-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-blue-700 block mb-1">Thursday</span>
+                            <span className="text-gray-600">9:00 AM - 5:00 PM</span>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-purple-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-purple-700 block mb-1">Friday</span>
+                            <span className="text-gray-600">8:00 AM - 1:00 PM</span>
+                          </div>
+                          
+                          <div className="bg-gradient-to-r from-teal-50 to-white p-3 rounded-lg">
+                            <span className="font-semibold text-teal-700 block mb-1">Saturday</span>
+                            <span className="text-gray-600">By appointment only</span>
+                          </div>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Tuesday</span>
-                          <span>9:00 AM - 5:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Wednesday</span>
-                          <span>10:00 AM - 6:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Thursday</span>
-                          <span>9:00 AM - 5:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Friday</span>
-                          <span>8:00 AM - 1:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Saturday</span>
-                          <span>By appointment only</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Sunday</span>
-                          <span>Closed</span>
+                        
+                        <div className="bg-gradient-to-r from-gray-50 to-white p-3 rounded-lg w-1/2 mx-auto text-center">
+                          <span className="font-semibold text-gray-700 block mb-1">Sunday</span>
+                          <span className="text-gray-600">Closed</span>
                         </div>
                       </div>
                     </div>
@@ -179,13 +187,13 @@ const LocateUs = () => {
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border border-purple-100">
               <div className="p-8 border-b border-gray-100">
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-2">Find Us</h2>
-                <p className="text-gray-600">Located in the heart of Windsor, Ontario</p>
+                <p className="text-gray-600">Located in the heart of LaSalle, Ontario</p>
               </div>
               
               {/* Google Maps Embed */}
               <div className="h-96">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.123456789!2d-83.0123456!3d42.3123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1400%20Front%20Rd%2C%20Windsor%2C%20ON%20N9J%202B3!5e0!3m2!1sen!2sca!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.123456789!2d-83.0123456!3d42.3123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1400%20Front%20Rd%2C%20LaSalle%2C%20ON%20N9J%202B3!5e0!3m2!1sen!2sca!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -253,7 +261,7 @@ const LocateUs = () => {
             
             <div className="space-y-3 mb-8">
               <h3 className="text-2xl font-semibold">Growing Smiles Children's Dentistry</h3>
-              <p className="text-purple-200 text-lg">1400 Front Rd, Windsor ON N9J 2B3</p>
+              <p className="text-purple-200 text-lg">1400 Front Rd, LaSalle ON N9J 2B3</p>
               <p className="text-purple-200 text-lg">Phone: 519-800-4500</p>
             </div>
             <div className="border-t border-purple-700 pt-8">

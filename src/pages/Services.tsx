@@ -258,7 +258,7 @@ const Services = () => {
             </div>
             <div className="space-y-3 mb-8">
               <h3 className="text-2xl font-semibold">Growing Smiles Children's Dentistry</h3>
-              <p className="text-gray-300 text-lg">1400 Front Rd, Windsor ON N9J 2B3</p>
+              <p className="text-gray-300 text-lg">1400 Front Rd, LaSalle ON N9J 2B3</p>
               <p className="text-gray-300 text-lg">Phone: 519-800-4500</p>
             </div>
             <div className="border-t border-gray-700 pt-8">
