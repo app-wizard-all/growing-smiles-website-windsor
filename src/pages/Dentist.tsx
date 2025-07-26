@@ -61,37 +61,29 @@ const Dentist = () => {
 
         <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 via-purple-500/5 to-pink-500/5" />
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
-              Meet Dr. Samita Gumber
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Board-certified pediatric dentist dedicated to creating positive dental experiences for children
-            </p>
-          </div>
-
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+  
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-5 gap-16 items-stretch">
             {/* Photo Section */}
-            <div className="space-y-8">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-teal-100">
+            <div className="space-y-8 lg:col-span-2 flex flex-col">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-teal-100 flex-1">
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">Dr. Samita Gumber (Dr. Sam)</h2>
                 
                 {/* Doctor's Photo */}
                 <div className="relative mb-8">
                   <img 
-                    src="/lovable-uploads/553908b6-ed98-41a3-b2f6-aea154e79a6f.png" 
+                    src="/lovable-uploads/Samita-2.jpg" 
                     alt="Dr. Samita Gumber" 
-                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    className="w-full h-96 object-cover object-top rounded-2xl shadow-lg"
                   />
                 </div>
 
                 {/* Contact Info */}
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-purple-600" />
-                    <span className="text-gray-700">dr.gumber@growingsmiles.ca</span>
+                    <span className="text-gray-700">info@thegrowingsmiles.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-teal-600" />
@@ -102,35 +94,8 @@ const Dentist = () => {
                     <span className="text-gray-700">1400 Front Rd, Windsor ON</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Bio Section */}
-            <div className="space-y-8">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-purple-100">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-6">About Dr. Gumber</h2>
                 
-                <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed">
-                    Dr. Samita Gumber (Dr. Sam to her patients) is a board-certified pediatric dentist who comes from a diverse background. Dr. Gumber was born and brought up in India, where she completed dental school and graduated with a master's degree in pediatric dentistry.
-                  </p>
-                  
-                  <p className="text-gray-700 leading-relaxed">
-                    She moved to the United States in 2016 and completed her second master's degree in pediatric dentistry at the University of Michigan, Ann Arbor, with her research on children with autism spectrum disorder.
-                  </p>
-
-                  <p className="text-gray-700 leading-relaxed">
-                    Dr. Gumber firmly believes in giving back to the community and has participated in multiple community dental health programs in India and the United States. She is also an adjunct clinical assistant professor at the University of Michigan School of Dentistry and enjoys teaching undergraduate students and pediatric dentistry residents.
-                  </p>
-
-                  <p className="text-gray-700 leading-relaxed">
-                    In her spare time, Dr. Gumber enjoys traveling, outdoor activities, and playing badminton. She is a huge Bhangra (Punjabi Folk dance) and Bollywood fan and loves to dance on Punjabi and Bollywood numbers.
-                  </p>
-                </div>
-              </div>
-
-              {/* Credentials */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-teal-100">
+                {/* Credentials */}
                 <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">Education & Credentials</h3>
                 
                 <div className="space-y-4">
@@ -184,7 +149,57 @@ const Dentist = () => {
                     </div>
                   </div>
                 </div>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="text-center text-gray-500 italic">
+                    "I believe every child deserves a dental home where they feel safe, understood, and cared for."
+                  </p>
+                </div>
               </div>
+            </div>
+
+            {/* Bio Section */}
+            <div className="space-y-8 lg:col-span-3 flex flex-col">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-purple-100 flex-1">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text text-transparent mb-6">About Dr. Gumber</h2>
+                
+                <div className="space-y-6">
+                  <p className="text-gray-700 leading-relaxed">
+                    Dr. Samita Gumber (Dr. Sam to her patients) is a Board-Certified Pediatric Dentist who brings mighty care to tiny teeth—with expertise, empathy, and a whole lot of heart.
+                  </p>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    Her journey into dentistry began in India, where she first discovered her passion for pediatric dental care. She earned her first Master's degree in Pediatric Dentistry from India, followed by a second Master's degree from the University of Michigan, Ann Arbor. This unique blend of international training has given her valuable insight into child behavior. She draws on this experience and approaches every interaction with a child with openness and curiosity, turning each moment into an opportunity to connect, learn, and build their confidence along the way.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    Dr. Sam is deeply passionate about dental care for children with special health care needs. With a keen awareness of the unique challenges these children and their families may face, she is dedicated to creating an inclusive, understanding, and accommodating dental experience for every child.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    With six years of specialized training and over four years of hands-on clinical experience, Dr. Sam is thrilled to open her very own pediatric dental practice. Located in LaSalle, the clinic warmly welcomes families from across Windsor-Essex and neighboring communities, offering high-quality, compassionate care tailored to each child's needs.
+                  </p>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    Dr. Gumber is in good standing with the Royal College of Dental Surgeons of Ontario, the Ontario Dental Association, the American Academy of Pediatric Dentistry, and the American Board of Pediatric Dentistry. She also gives back to the local dental community through volunteer work with the Essex County Dental Society.
+                  </p>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    When she's not in the office, Dr. Sam is soaking up life's little joys—like a quiet cup of tea with her husband (a rare treat with their two toddlers on the loose). These moments help melt away the stress and recharge her for whatever comes next.
+                  </p>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    Dr Sam is excited to help nurture growing smiles in our community.
+                  </p>
+                </div>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="text-center text-gray-500 italic">
+                    "Bringing mighty care to tiny teeth—with expertise, empathy, and heart."
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Calendar } from "lucide-react";
+import { Menu, X, Calendar, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 
 type NavigationItem = {
@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Navigation Links - Left Side */}
           <div className="hidden md:flex items-center space-x-8">
@@ -55,33 +55,29 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Logo - Center Right */}
+          {/* Center Right */}
           <div className="flex items-center space-x-6">
-            <Link to="/" className="flex items-center group">
-              <div className="relative">
-                {/* Subtle modern container */}
-                <div className="relative bg-white rounded-xl p-3 shadow-md border border-gray-200 group-hover:shadow-lg transition-all duration-300">
-                  <img 
-                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                    alt="Growing Smiles Children's Dentistry"
-                    className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                {/* Very subtle glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-teal-400/10 via-purple-400/10 to-pink-400/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </Link>
 
-            {/* Book Appointment Button */}
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-            >
-              <Calendar className="w-5 h-5" />
-              Book Appointment
-            </a>
+            {/* Need immediate assistance section */}
+            <div className="hidden md:block">
+              <p className="text-right text-sm font-medium text-gray-700 mb-1">Need immediate assistance?</p>
+              <div className="flex gap-2">
+                <a 
+                  href="tel:519-800-4500" 
+                  className="inline-flex items-center gap-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-md text-sm font-medium hover:shadow-lg transition-all duration-300"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call 519-800-4500
+                </a>
+                <Link 
+                  to="/contact" 
+                  className="inline-flex items-center gap-1 border border-purple-500 text-purple-600 px-3 py-1 rounded-md text-sm font-medium hover:bg-purple-50 transition-all duration-300"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Location
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,16 +125,27 @@ const Navbar = () => {
                   </Link>
                 )
               ))}
-              <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold mx-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Calendar className="w-5 h-5" />
-                Book Appointment
-              </a>
+              <div className="px-4 py-3">
+                <p className="font-medium text-gray-700 mb-2">Need immediate assistance?</p>
+                <div className="flex flex-col gap-2">
+                  <a 
+                    href="tel:519-800-4500" 
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-md font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call 519-800-4500
+                  </a>
+                  <Link 
+                    to="/contact" 
+                    className="inline-flex items-center gap-2 border border-purple-500 text-purple-600 px-4 py-2 rounded-md font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <MapPin className="w-4 h-4" />
+                    View Location
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         )}

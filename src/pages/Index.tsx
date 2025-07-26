@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Calendar, Smile, Heart, Star, Phone, MapPin, Sparkles, Clock, Shield } from "lucide-react";
 import Navbar from '../components/NavBar';
@@ -33,202 +32,296 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section - Two Column Layout */}
-      <section className="relative py-12">
-        {/* Reduced Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div ref={parallaxRef} className="absolute inset-0">
-            {/* Fewer floating geometric shapes */}
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={`shape-${i}`}
-                className={`absolute rounded-full animate-float ${
-                  i % 2 === 0 
-                    ? 'bg-gradient-to-r from-teal-200/15 to-blue-200/15' 
-                    : 'bg-gradient-to-r from-purple-200/15 to-pink-200/15'
-                }`}
-                style={{
-                  width: Math.random() * 60 + 40,
-                  height: Math.random() * 60 + 40,
-                  left: `${Math.random() * 80 + 10}%`,
-                  top: `${Math.random() * 80 + 10}%`,
-                  animationDelay: `${Math.random() * 8}s`,
-                  animationDuration: `${Math.random() * 15 + 15}s`
-                }}
-              />
-            ))}
-            
-            {/* Backdrop logo elements with better spacing */}
-            {[...Array(6)].map((_, i) => (
-              <img
-                key={`backdrop-${i}`}
-                src={backdropElements[Math.floor(Math.random() * backdropElements.length)]}
-                alt=""
-                className="absolute opacity-12 animate-float"
-                style={{
-                  width: Math.random() * 60 + 50,
-                  height: Math.random() * 60 + 50,
-                  left: `${Math.random() * 70 + 15}%`,
-                  top: `${Math.random() * 70 + 15}%`,
-                  animationDelay: `${Math.random() * 10}s`,
-                  animationDuration: `${Math.random() * 20 + 20}s`
-                }}
-              />
-            ))}
-          </div>
-        </div>
+      <section className="relative pt-16 pb-0">
+        {/* Clean simple background */}
+        <div className="absolute inset-0"></div>
 
-        {/* Two Column Layout: Logo Left, Trust Indicators Right */}
-        <div className="relative w-full max-w-6xl mx-auto px-4 mb-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        {/* Two Column Layout: Logo Left, Schedule Form Right */}
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-start">
             
-            {/* Left Column: Main Logo - White Border Style */}
-            <div className="flex justify-center">
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-white/50">
-                <img 
-                  src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
-                  alt="Growing Smiles Children's Dentistry" 
-                  className="w-80 h-auto object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
-                />
-                {/* Subtle glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-teal-300/20 via-purple-300/20 to-pink-300/20 rounded-3xl blur-xl opacity-50" />
-              </div>
-            </div>
-
-            {/* Right Column: Trust Indicators */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { 
-                  icon: Smile, 
-                  text: "Kid-Friendly", 
-                  color: "from-teal-500 to-teal-600", 
-                  description: "Fun and welcoming environment" 
-                },
-                { 
-                  icon: Heart, 
-                  text: "Gentle Care", 
-                  color: "from-purple-500 to-purple-600", 
-                  description: "Expert and caring approach" 
-                },
-                { 
-                  icon: Star, 
-                  text: "Fun Experience", 
-                  color: "from-pink-500 to-purple-500", 
-                  description: "Making dental visits enjoyable" 
-                },
-                { 
-                  icon: Shield, 
-                  text: "Safe & Secure", 
-                  color: "from-blue-500 to-teal-500", 
-                  description: "Professional pediatric care" 
-                }
-              ].map((item, index) => (
-                <div 
-                  key={index} 
-                  className="group relative bg-white/90 backdrop-blur-sm rounded-xl p-4
-                           shadow-md hover:shadow-lg
-                           transform hover:-translate-y-1 hover:scale-105
-                           transition-all duration-500
-                           animate-fade-in border border-teal-100"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className={`w-8 h-8 mb-2 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <item.icon className="w-4 h-4 text-white" />
-                  </div>
-                  <h3 className="text-sm font-bold text-gray-900 mb-1 text-center">
-                    {item.text}
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed text-center">
-                    {item.description}
-                  </p>
+            {/* Left Column: Main Logo and Trust Indicators */}
+            <div>
+              <div className="flex justify-center mb-8">
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <img 
+                    src="/lovable-uploads/938ec48e-ee62-43b3-9547-0f51ac679f34.png"
+                    alt="Growing Smiles Children's Dentistry" 
+                    className="w-80 h-auto object-contain mx-auto"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Service Area Tagline */}
-          <div className="text-center mt-8">
-            <p className="text-lg text-gray-600 font-medium bg-white/70 backdrop-blur-sm rounded-full px-6 py-3 inline-block shadow-md border border-purple-100">
-              Children's dental care for LaSalle, Windsor, Tecumseh, Essex & nearby areas
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Streamlined Appointment Section */}
-      <section className="py-12 bg-gradient-to-br from-teal-50 via-purple-50 to-pink-50 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-pink-500/5" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Stylized Form Container */}
-          <div className="relative">
-            <div className="absolute -inset-6 bg-gradient-to-r from-teal-400/20 via-purple-400/20 to-pink-400/20 rounded-3xl blur-xl animate-pulse-subtle" />
-            <div className="relative bg-gradient-to-br from-white/95 via-white/90 to-purple-50/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-gradient-to-br from-teal-200/50 to-purple-200/50">
+              </div>
               
-              {/* Form Header */}
+              {/* Service Area Tagline */}
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                  Schedule Your Visit
+                <h2 className="text-xl text-gray-700 font-semibold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-1">
+                  Children's Dental Care
                 </h2>
-                <p className="text-gray-600">
-                  Book your child's appointment with our gentle pediatric dentist
+                <p className="text-lg font-medium text-gray-500">
+                  LaSalle • Windsor • Tecumseh • Essex & nearby areas
                 </p>
               </div>
-
-              {/* Stylized Google Form */}
-              <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-white to-purple-50/30 shadow-inner border border-purple-100/50">
-                <iframe 
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSf9PxJsauDA2KCGd22xrnYeIIO9U0ApVx0quDbn1D5ffSlSuw/viewform?embedded=true" 
-                  width="100%" 
-                  height="450" 
-                  className="border-0 rounded-2xl"
-                  title="Appointment Form"
-                >
-                  Loading…
-                </iframe>
+              
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { 
+                    icon: Smile, 
+                    text: "Kid-Friendly", 
+                    description: "Fun, welcoming environment",
+                    bgColor: "bg-purple-100",
+                    iconColor: "text-purple-600",
+                    gradient: "from-purple-500 to-pink-500"
+                  },
+                  { 
+                    icon: Heart, 
+                    text: "Gentle Care", 
+                    description: "Expert, caring approach",
+                    bgColor: "bg-teal-100",
+                    iconColor: "text-teal-600",
+                    gradient: "from-teal-500 to-blue-500"
+                  },
+                  { 
+                    icon: Star, 
+                    text: "Fun Experience", 
+                    description: "Making visits enjoyable",
+                    bgColor: "bg-purple-100",
+                    iconColor: "text-purple-600",
+                    gradient: "from-pink-500 to-purple-500"
+                  },
+                  { 
+                    icon: Shield, 
+                    text: "Safe & Secure", 
+                    description: "Professional pediatric care",
+                    bgColor: "bg-teal-100",
+                    iconColor: "text-teal-600",
+                    gradient: "from-blue-500 to-teal-500"
+                  }
+                ].map((item, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-xl p-4 shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className={`w-12 h-12 mb-3 rounded-full ${item.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
+                        <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                        <item.icon className={`w-6 h-6 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`} />
+                      </div>
+                      <h3 className="text-md font-bold text-gray-900 mb-1 group-hover:text-purple-700 transition-colors">
+                        {item.text}
+                      </h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Contact Info Below Form */}
-              <div className="mt-6 text-center">
-                <p className="text-gray-600 mb-4">Need immediate assistance?</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <a 
-                    href="tel:519-800-4500" 
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Call 519-800-4500
-                  </a>
-                  <Link 
-                    to="/contact" 
-                    className="inline-flex items-center gap-2 border-2 border-gradient-to-r from-teal-500 to-purple-500 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-all duration-300"
-                  >
-                    <MapPin className="w-5 h-5" />
-                    View Location
-                  </Link>
+            {/* Right Column: Contact Form */}
+            <div className="relative">
+              <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                
+                {/* Form Header */}
+                <div className="mb-4">
+                  <h2 className="text-xl font-bold text-purple-700 mb-2">
+                    Contact Us
+                  </h2>
+                  <p className="text-gray-600 text-sm">
+                    Reach out to us for more information or to schedule a visit
+                  </p>
                 </div>
+
+                {/* Custom Netlify Form */}
+                <div className="w-full">
+                  <form 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    className="space-y-5"
+                  >
+                    {/* Hidden fields for Netlify */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p className="hidden">
+                      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    {/* Child's Name */}
+                    <div>
+                      <label htmlFor="childName" className="block text-sm font-medium text-gray-700 mb-1">
+                        Child's Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="childName"
+                        id="childName"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                        placeholder="Enter your child's full name"
+                      />
+                    </div>
+                    
+                    {/* Parent/Guardian Name */}
+                    <div>
+                      <label htmlFor="parentName" className="block text-sm font-medium text-gray-700 mb-1">
+                        Parent/Guardian Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="parentName"
+                        id="parentName"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+                    
+                    {/* Phone Number */}
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                        Contact Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                        placeholder="(xxx) xxx-xxxx"
+                      />
+                    </div>
+                    
+                    {/* Email Address */}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                        placeholder="youremail@example.com"
+                      />
+                    </div>
+                    
+                    {/* Reason for Contact */}
+                    <div>
+                      <label htmlFor="reason" className="block text-sm font-medium text-gray-700 mb-1">
+                        Reason for Contact *
+                      </label>
+                      <textarea
+                        name="reason"
+                        id="reason"
+                        rows={3}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                        placeholder="Please let us know how we can help"
+                      ></textarea>
+                    </div>
+                    
+                    {/* How did you hear about us */}
+                    <div>
+                      <label htmlFor="referralSource" className="block text-sm font-medium text-gray-700 mb-1">
+                        How did you hear about us? *
+                      </label>
+                      <div className="mt-1 space-y-2">
+                        <div className="flex items-center">
+                          <input
+                            id="referral-friend"
+                            name="referralSource"
+                            type="radio"
+                            value="Friend/Family"
+                            required
+                            className="h-4 w-4 text-purple-600 focus:ring-purple-500"
+                          />
+                          <label htmlFor="referral-friend" className="ml-2 block text-sm text-gray-700">
+                            Friend/Family
+                          </label>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            id="referral-google"
+                            name="referralSource"
+                            type="radio"
+                            value="Google Search"
+                            className="h-4 w-4 text-purple-600 focus:ring-purple-500"
+                          />
+                          <label htmlFor="referral-google" className="ml-2 block text-sm text-gray-700">
+                            Google Search
+                          </label>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            id="referral-social"
+                            name="referralSource"
+                            type="radio"
+                            value="Social Media"
+                            className="h-4 w-4 text-purple-600 focus:ring-purple-500"
+                          />
+                          <label htmlFor="referral-social" className="ml-2 block text-sm text-gray-700">
+                            Social Media
+                          </label>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            id="referral-other"
+                            name="referralSource"
+                            type="radio"
+                            value="Other"
+                            className="h-4 w-4 text-purple-600 focus:ring-purple-500"
+                          />
+                          <label htmlFor="referral-other" className="ml-2 block text-sm text-gray-700">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Submit Button */}
+                    <div className="mt-6">
+                      <button
+                        type="submit"
+                        className="w-full bg-purple-600 text-white py-3 px-4 rounded-md font-medium hover:bg-purple-700 transition-colors"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                
               </div>
             </div>
           </div>
         </div>
       </section>
 
+
       {/* Quick Info Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 via-purple-600/90 to-pink-600/90" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-purple-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="space-y-3">
-              <Phone className="w-12 h-12 mx-auto opacity-90" />
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                <Phone className="w-6 h-6" />
+              </div>
               <h3 className="text-xl font-bold">Call Us</h3>
               <p className="text-xl font-semibold">519-800-4500</p>
             </div>
             <div className="space-y-3">
-              <MapPin className="w-12 h-12 mx-auto opacity-90" />
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                <MapPin className="w-6 h-6" />
+              </div>
               <h3 className="text-xl font-bold">Visit Us</h3>
               <p className="text-lg">1400 Front Rd, Windsor ON</p>
             </div>
             <div className="space-y-3">
-              <Clock className="w-12 h-12 mx-auto opacity-90" />
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                <Clock className="w-6 h-6" />
+              </div>
               <h3 className="text-xl font-bold">Office Hours</h3>
               <p className="text-lg">Mon-Fri: 8AM-5PM</p>
             </div>
@@ -237,8 +330,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-6">
               <img 
