@@ -73,5 +73,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- A hidden form for Netlify to detect during build -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="childName" />
+      <input type="text" name="parentName" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="reason"></textarea>
+      <input type="radio" name="referralSource" />
+    </form>
   </body>
 </html>

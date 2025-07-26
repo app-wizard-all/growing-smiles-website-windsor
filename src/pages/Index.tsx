@@ -138,9 +138,19 @@ const Index = () => {
                   <form 
                     name="contact" 
                     method="POST" 
+                    action="/thank-you"
                     data-netlify="true"
-                    netlify-honeypot="bot-field"
+                    data-netlify-honeypot="bot-field"
                     className="space-y-5"
+                    onSubmit={(e) => {
+                      if (window.location.hostname === 'localhost') {
+                        e.preventDefault();
+                        // Show an alert for local testing
+                        alert('Form submitted successfully! (This is a simulation for local development)');
+                        window.location.href = '/thank-you';
+                      }
+                      // In production, Netlify will handle the form submission
+                    }}
                   >
                     {/* Hidden fields for Netlify */}
                     <input type="hidden" name="form-name" value="contact" />
@@ -285,9 +295,10 @@ const Index = () => {
                     <div className="mt-6">
                       <button
                         type="submit"
-                        className="w-full bg-purple-600 text-white py-3 px-4 rounded-md font-medium hover:bg-purple-700 transition-colors"
+                        className="w-full bg-purple-600 text-white py-3 px-4 rounded-md font-medium hover:bg-purple-700 transition-colors relative overflow-hidden group"
                       >
-                        Submit
+                        <span className="relative z-10">Submit</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </button>
                     </div>
                   </form>
