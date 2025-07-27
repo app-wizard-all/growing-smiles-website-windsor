@@ -148,6 +148,16 @@ export default {
 					'50%': {
 						opacity: '0.8'
 					}
+				},
+				'scale-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.95)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
 				}
 			},
 			animation: {
@@ -159,7 +169,9 @@ export default {
 				'fade-in-delayed': 'fade-in 0.5s ease-out 0.2s',
 				'fade-in-delayed-2': 'fade-in 0.5s ease-out 0.4s',
 				'fade-in-delayed-3': 'fade-in 0.5s ease-out 0.6s',
-				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
+				'fadeIn': 'fade-in 0.3s ease-out',
+				'scaleIn': 'scale-in 0.3s ease-out'
 			},
 			scale: {
 				'102': '1.02',
